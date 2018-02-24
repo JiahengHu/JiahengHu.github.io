@@ -1,5 +1,6 @@
 ---
 layout: post
+mathjax: true
 title: Interesting Probability Questions
 ---
 
@@ -8,7 +9,7 @@ In this blog, I will keep updating interesting probability questions as time goe
 
 1. In coin tossing, assuming it is a fair coin, what is the probability of the event that a head comes before a tail?
 
-Solution: Let **A** denote the event that a head comes before a tail and **H<sub>i</sub>** denote the event that first toss is a head. Thus, we have: 
+Solution: Let **A** denote the event that a head comes before a tail and **H<sub>i</sub>** denote the event that first toss is a head. Thus, we have: $h = s \sqrt {\frac {N + 1} {2N}}$
 
 $$
 \begin{equation}
