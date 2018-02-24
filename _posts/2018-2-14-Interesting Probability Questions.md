@@ -10,6 +10,6 @@ In this blog, I will keep updating interesting probability questions as time goe
 
 Solution: Let **A** denote the event that a head comes before a tail and **H~i** denote the event that first toss is a head. Thus, we have: 
 
-E(A) = 0.5*E(A|H~1~) + 0.5*E(A|T~1~)
+E(A) = 0.5*E(A|H<sub>i</sub>) + 0.5*E(A|T~1~)
 
 
