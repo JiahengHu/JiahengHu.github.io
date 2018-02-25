@@ -8,6 +8,10 @@ My name is Wei Zhang. I am a graduate student at Columbia Unversity. I have spen
 
 ### More Information
 
+I love to play basketball with friends during weekeneds. I also work out in order to improve my basketball skills. My favorite basketball player is Kobe Bryant. In fact, I love playing sports such as soccer, skiing and etc. 
+
+Other than sports, I also love reading autobiography like Steve Jobs. 
+
 
 ### Contact me
 
