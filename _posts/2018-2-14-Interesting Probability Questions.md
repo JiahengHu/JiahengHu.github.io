@@ -11,8 +11,14 @@ In this blog, I will keep updating interesting probability questions as time goe
 
 Solution: Let **A** denote the event that a head comes before a tail and **H<sub>i</sub>** denote the event that first toss is a head. Thus, we have: 
 
-$$E(A) = 0.5\times E(A | H_i) + 0.5\times E(A | T_i)$$
+$$E(A) = 0.5\times E(A | H_1) + 0.5\times E(A | T_1)$$
 
+To solve this, we look into each term. 
 
+$$E(A | H_1) = 0.5\times 2 + 0.5\times (2 + E(A))$$
+
+$$E(A | T_1) = 1 + E(A)$$
+
+We plug them in so as to solve it: $E(A) = 6$
 
 
