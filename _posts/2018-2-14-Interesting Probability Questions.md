@@ -19,6 +19,6 @@ $$E(A | H_1) = 0.5\times 2 + 0.5\times (2 + E(A)) \tag{2}$$
 
 $$E(A | T_1) = 1 + E(A) \tag{3}$$
 
-We plug \ref{tag:1} and \ref{tag:2} in so as to solve it: $E(A) = 6$
+We plug \ref{1} and \ref{2} in so as to solve it: $E(A) = 6$
 
 
