@@ -19,10 +19,6 @@ $$E(A | H_1) = 0.5\times 2 + 0.5\times (1 + E(A | H_1) \label{2}\tag{2}$$
 
 $$E(A | T_1) = 1 + E(A) \label{3}\tag{3}$$
 
-From \ref{2}, we have $E(A | H_1) = 3$. 
 
-2. In a similar manner, we have an fair coin, what is the expected toss of the event that two heads comes consecutively?
-
-Solution: Test it with yourself. My answer is 6. 
 
 
