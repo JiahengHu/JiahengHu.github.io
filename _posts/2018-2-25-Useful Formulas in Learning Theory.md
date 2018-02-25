@@ -1,0 +1,7 @@
+---
+layout: post
+mathjax: true
+title: Interesting Probability Questions
+---
+
+I am opening a new post for formulas in Learning Theory and general Machine Learning area. It is purely mathamatically based. It is suggested to use it as reference instead of studying them one by one. 
