@@ -8,3 +8,4 @@ I am opening a new post for formulas in Learning Theory and general Machine Lear
 
 ## Probability Theory and Expectation
 **Law of Total Expectection (a.k.a. Tower Rule)**
+Let random variable X and Y defined in the same probability space. Then, $E_X (X) = E_Y(E_X(X\lvert Y))$.
