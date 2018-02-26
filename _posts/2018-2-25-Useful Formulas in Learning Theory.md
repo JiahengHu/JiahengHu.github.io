@@ -13,9 +13,9 @@ Let random variable X and Y defined in the same probability space. Then, $E_X (X
 
 Proof: 
 
-\begin{align}
+$$\begin{align}
 
-E_Y (E_X (X\lvert Y)) &= E_Y(\sum_{x} x\star P(X\lvert Y))
+E_Y (E_X (X\lvert Y)) &= E_Y(\sum_{x} x * P(X\lvert Y))
 
  &= \sum_{y} (\sum_{x} x\star P(X=x\lvert Y)) P(y)
 
@@ -23,7 +23,7 @@ We can switch the summation so we have:
 
  &=\sum_{x}  \sum_{y} x\star P(Y)\star P(X=x\lvert Y)
 
-\end{align}
+\end{align}$$
 
 $$E_Y (E_X (X\lvert Y)) = E_Y(\sum_{x} x\star P(X\lvert Y))$$
 
