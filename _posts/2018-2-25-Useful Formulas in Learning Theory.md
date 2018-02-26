@@ -8,4 +8,15 @@ I am opening a new post for formulas in Learning Theory and general Machine Lear
 
 ## Probability Theory and Expectation
 **Law of Total Expectection (a.k.a. Tower Rule)**
+
 Let random variable X and Y defined in the same probability space. Then, $E_X (X) = E_Y(E_X(X\lvert Y))$.
+
+Proof: 
+
+$$E_Y (E_X (X\lvert Y)) = E_Y(\sum_{x} x\* P(X\lvert Y))$$
+
+$$ = \sum_{y} (\sum_{x} x\* P(X=x\lvert Y)) P(y)$$
+
+We can switch the summation so we have:
+
+$$=\sum_{x}  \sum_{y} x\* P(Y)\* P(X=x\lvert Y)$$
