@@ -19,5 +19,5 @@ E_Y (E_X (X\lvert Y)) &= E_Y(\sum_{x} x * P(X\lvert Y))\\
 &=\sum_{x}  \sum_{y} x* P(Y)* P(X=x\lvert Y)\\
 &=\sum_{x} x* \sum_{y} P(Y)* P(X=x\lvert Y)\\
 &=\sum_{x} x*P(x)\\
-&=E_X (X) &#x220E
+&=E_X (X) 
 \end{align}$$
