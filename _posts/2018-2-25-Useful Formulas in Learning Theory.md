@@ -15,7 +15,7 @@ Proof:
 
 $$\begin{align}
 E_Y (E_X (X\lvert Y)) &= E_Y(\sum_{x} x * P(X\lvert Y))\\
-&= \sum_{y} (\sum_{x} x* P(X=x\lvert Y)) P(y) \\
-\text{We can switch the summation so we have:}\\
+&= \sum_{y} \big[ \sum_{x} x* P(X=x\lvert Y)\big] P(y) \\
 &=\sum_{x}  \sum_{y} x* P(Y)\star P(X=x\lvert Y)\\
+&=\sum_{x} x* \sum_{y} x* P(Y)\star P(X=x\lvert Y)
 \end{align}$$
