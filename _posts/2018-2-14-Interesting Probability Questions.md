@@ -29,7 +29,7 @@ Solution: Test it with yourself. My answer is 6.
 
 Solution: This question requires a bit tricks. Intuitively, suppose that we have probability p to have a head, if we toss n times, the expected times of heads is $np$. If we set it to k, the number of heads we want, then $n=\frac{k}{p}$. So the quick answer is 4. 
 
-Now, I show the completed steps. Let $X = X_1 + X_2 + \hdots + X_k$ where k is the number of heads we want (k=2 in this case) and $X_i$ denotes the event of ith head after getting (i-1) heads. 
+Now, I show the completed steps. Let $X = X_1 + X_2 + \dots + X_k$ where k is the number of heads we want (k=2 in this case) and $X_i$ denotes the event of ith head after getting (i-1) heads. 
 
 **4 Tossing a fiar coin, what is the probability of the event that HTT comes before HHT?**
 
