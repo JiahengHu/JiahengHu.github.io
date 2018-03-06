@@ -1,7 +1,7 @@
 ---
 layout: post
 mathjax: true
-title: Useful Formulas in Learning Theory
+title: Useful Formulas for Math
 ---
 
 I am opening a new post for formulas in Learning Theory and general Machine Learning area. It is purely mathamatically based. It is suggested to use it as reference instead of studying them one by one. 
@@ -25,10 +25,15 @@ E_Y (E_X (X\lvert Y)) &= E_Y(\sum_{x} x * P(X\lvert Y))\\
 ## Learning Theory
 **L' Hospital Rule**
 
-L' Hospital Rule uses derivatives to help evaluate limits involving inderterminate forms. It states taht for functions $f$ and $g$ which are **differentiable** on an open interval $I$ except possibly at a point $c$ contained in $I$,if 
+L' Hospital Rule uses derivatives to help evaluate limits involving inderterminate forms. It states that for functions $f$ and $g$ which are **differentiable** on an open interval $I$ except possibly at a point $c$ contained in $I$,if 
 
 $$\lim\limits_{x\to c} f(x) = \lim\limits_{x\to c} g(x) = 0$$ or $$\pm \infty$$
 
 $g^{\prime}(x)\neq 0$ for all $x$ in $I$ with $x\neq c$ and $\lim\limits_{x\to c} \frac{f^{\prime}(x)}{g^{\prime}(x)}$ exists,
 
 then $\lim\limits_{x\to c} \frac{f(x)}{g(x)} = \lim\limits_{x\to c} \frac{f^{\prime}(x)}{g^{\prime}(x)}$
+
+## Math
+**Log properties**
+
+$a^{log_b n} = (b^{log_b a})^{log_b n} = (b^{log_b n})^{log_b a} = n^{log_b a} $
