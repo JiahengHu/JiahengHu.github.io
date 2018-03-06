@@ -27,7 +27,7 @@ E_Y (E_X (X\lvert Y)) &= E_Y(\sum_{x} x * P(X\lvert Y))\\
 
 L' Hospital Rule uses derivatives to help evaluate limits involving inderterminate forms. It states taht for functions $f$ and $g$ which are **differentiable** on an open interval $I$ except possibly at a point $c$ contained in $I$,if 
 
-$$\lim_{x\to c} f(x) = \lim_{x\to c} g(x) = 0 or \pm \infty$$
+$$\lim_{x\to c} f(x) = \lim_{x\to c} g(x) = 0$$ or $$\pm \infty$$
 
 $g^{\prime}(x)\neq 0$ for all $x$ in $I$ with $x\neq c$ and $\lim_{x\to c} \frac{f^{\prime}(x)}{g^{\prime}(x)}$ exists,
 
