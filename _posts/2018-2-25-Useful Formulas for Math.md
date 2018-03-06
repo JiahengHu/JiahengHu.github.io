@@ -39,6 +39,7 @@ then $\lim\limits_{x\to c} \frac{f(x)}{g(x)} = \lim\limits_{x\to c} \frac{f^{\pr
 $a^{log_b n} = (b^{log_b a})^{log_b n} = (b^{log_b n})^{log_b a} = n^{log_b a} $
 
 **Geometric Series**
+
 $1 + x + x^2 + \dots + x^n = \frac{1-x^{n+1}}{1-x}$ for $x\neq 1$
 
 $1 + x + x^2 +\dots = \frac{1}{1-x}$ for $\lvert x\rvert <1$
