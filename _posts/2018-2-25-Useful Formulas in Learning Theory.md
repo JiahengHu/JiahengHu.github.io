@@ -29,6 +29,6 @@ L' Hospital Rule uses derivatives to help evaluate limits involving indertermina
 
 $$\lim_{x\to c} f(x) = \lim_{x\to c} g(x) = 0 or \pm \infty$$
 
-$g^{\prime}(x)\neq 0$ for all $x$ in $I$ with $x\neq c$ and $\lim_{x\to c} \frac_{f^{\prime}(x)}_{g^{\prime}(x)}$ exists,
+$g^{\prime}(x)\neq 0$ for all $x$ in $I$ with $x\neq c$ and $\lim_{x\to c} \frac{f^{\prime}(x)}{g^{\prime}(x)}$ exists,
 
-then $\lim_{x\to c} \frac_{f(x)}_{g(x)} = \lim_{x\to c} \frac_{f^'(x)}_{g^'(x)}$
+then $\lim_{x\to c} \frac{f(x)}{g(x)} = \lim_{x\to c} \frac{f^{\prime}(x)}{g^{\prime}(x)}$
