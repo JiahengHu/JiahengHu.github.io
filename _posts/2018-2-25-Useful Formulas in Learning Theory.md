@@ -25,4 +25,8 @@ E_Y (E_X (X\lvert Y)) &= E_Y(\sum_{x} x * P(X\lvert Y))\\
 ## Learning Theory
 **L' Hospital Rule**
 
-L' Hospital Rule uses derivatives to help evaluate limits involving inderterminate forms. It states taht for functions $f$ and $g$.
+L' Hospital Rule uses derivatives to help evaluate limits involving inderterminate forms. It states taht for functions $f$ and $g$ which are **differentiable** on an open interval $I$ except possibly at a point $c$ contained in $I$,if 
+
+$$\lim_{x\to c} f(x) = \lim_{x\to c} g(x) = 0 or \pm \infty$$
+
+$g^'(x)\neq 0$ 
