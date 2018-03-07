@@ -42,3 +42,9 @@ $$P(A \lvert H_1) = P(A \lvert H_1 H_2)P(H_2) + P(A \lvert H_1 T_2)P(T_2) = 0 + 
 $$P(A \lvert H_1 T_2) =(A \lvert H_1 T_2 H_3)P(H_3) + P(A \lvert H_1 T_2 T_3)P(T_3) = 0.5P(A \lvert H_1) + 0.5 \label{6}\tag{6}$$
 
 Combining \ref{5} and \ref{6}, we have $P(A\lvert H_1) = \frac{1}{3}$. From \ref{4}, we have $P(A) = P(A\lvert H_1) = \frac{1}{3}$.
+
+**5 Interview n candidates for assistant in order, hire candidate i if better than the current assistant,how many times of hiring a new assistant?**
+
+Solution: Let $X$ denote # times of hiring a new assistant and $Z_i = \mathbb{I}\[hire i-th candidate\]$. The probablity of hiring i-th candidate is $\frac{1}{i}$. Thus, 
+
+$$E\[X\] = E\[\sum\limits_{i=1}^{n} Z_i\] = \ln_{n}$$
