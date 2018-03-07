@@ -44,4 +44,8 @@ $1 + x + x^2 + \dots + x^n = \frac{1-x^{n+1}}{1-x}$ for $x\neq 1$
 
 $1 + x + x^2 +\dots = \frac{1}{1-x}$ for $\lvert x\rvert <1$
 
+**Harmonic Series Series**
+
+$\sum\limits_{i=1}^{n} \frac{1}{i} = ln n + \ita + \frac{1}{2n} - \frac{1}{12n^2}$ is the best approximation for the series. 
+
 
