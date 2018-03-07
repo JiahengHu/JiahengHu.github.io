@@ -56,4 +56,8 @@ $1 + x + x^2 +\dots = \frac{1}{1-x}$ for $\lvert x\rvert <1$
 
 $\sum\limits_{i=1}^{n} \frac{1}{i} = \ln{n} + \gamma + \frac{1}{2n} - \frac{1}{12n^2}$ is the best approximation for the series. 
 
+**Stirling's approximation**
+
+$$\log_2 n! = n\log_2 n - (\log_2 e)n + \mathcal(O)(\log_2 n)$$
+
 
