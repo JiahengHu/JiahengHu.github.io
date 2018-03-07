@@ -45,6 +45,6 @@ Combining \ref{5} and \ref{6}, we have $P(A\lvert H_1) = \frac{1}{3}$. From \ref
 
 **5 Interview n candidates for assistant in order, hire candidate i if better than the current assistant,how many times of hiring a new assistant?**
 
-Solution: Let $X$ denote # times of hiring a new assistant and $Z_i = \mathbb{I}\[hire i-th candidate\]$. The probablity of hiring i-th candidate is $\frac{1}{i}$. Thus, 
+Solution: Let $X$ denote # times of hiring a new assistant and $Z_i = \mathbb{I}$[hire i-th candidate]. The probablity of hiring i-th candidate is $\frac{1}{i}$. Thus, 
 
-$$E\[X\] = E\[\sum\limits_{i=1}^{n} Z_i\] = \ln_{n}$$
+$$E[X] = E[\sum\limits_{i=1}^{n} Z_i] = \ln_{n}$$
