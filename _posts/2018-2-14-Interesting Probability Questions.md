@@ -48,3 +48,9 @@ Combining \ref{5} and \ref{6}, we have $P(A\lvert H_1) = \frac{1}{3}$. From \ref
 Solution: Let $X$ denote # times of hiring a new assistant and $Z_i = \mathbb{1}$[hire i-th candidate]. The probablity of hiring i-th candidate is $\frac{1}{i}$. Thus, 
 
 $$E[X] = E[\sum\limits_{i=1}^{n} Z_i] = \ln{n}$$
+
+**6 There are n cards facing down. For each card, guess randomly and turn it over for checking. Get one point for a correct guess. What is expected number of points?**
+
+Solution: Let $Y_i = \mathbb{1}$[i-th guess correct] and $X = \sum\limits_{i=1}^{n} y_i$. The probability of guessing right is $\frac{1}{n}$ Thus,
+
+$$E[X] = \sum\limits_{i=1}^{n} E[Y_i] = 1$$
