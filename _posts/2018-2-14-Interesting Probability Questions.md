@@ -51,6 +51,11 @@ $$E[X] = E[\sum\limits_{i=1}^{n} Z_i] = \ln{n}$$
 
 **6 There are n cards facing down. For each card, guess randomly and turn it over for checking. Get one point for a correct guess. What is expected number of points?**
 
-Solution: Let $Y_i = \mathbb{1}$[i-th guess correct] and $X = \sum\limits_{i=1}^{n} y_i$. The probability of guessing right is $\frac{1}{n}$ Thus,
+Solution: Let $Y_i = \mathbb{1}$[i-th guess correct] and $X = \sum\limits_{i=1}^{n} Y_i$. The probability of guessing right is $\frac{1}{n}$ Thus,
 
 $$E[X] = \sum\limits_{i=1}^{n} E[Y_i] = 1$$
+
+**7 How many people do you need until you expect to find two people with the same birthday?**
+
+Solution: Let $X_{ij} = \mathbb{1}$[persons i and j have the same birthday], then $E[X_{ij}] = \frac{n}{n^2}$. The total expected number of pairs of same birthday is $E[\sum X_{ij}]=\sum E[X_{ij}]=\frac{k(k-1)}{2n}$ where $k$ is the number of people we should have and $n$ is 365 days in this case. Let the equation equal to 1 so that we can solve for $k$.
+
