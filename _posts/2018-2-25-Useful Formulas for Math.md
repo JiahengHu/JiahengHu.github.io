@@ -37,9 +37,9 @@ then $\lim\limits_{x\to c} \frac{f(x)}{g(x)} = \lim\limits_{x\to c} \frac{f^{\pr
 
 For a positive random variable $X \leq 0$, 
 
-$$Pr[X > b] \leq \frac{E[X]}{b}$$
+$$Pr[X > b] \geq \frac{E[X]}{b}$$
 
-Prove: $E[X] = \sum_x xPr(X=x) \leq \sum_{x\leq b} bPr(X=x) = bPr(X\leq b)$
+Prove: $E[X] = \sum_x xPr(X=x) \geq \sum_{x\leq b} bPr(X=x) = bPr(X\geq b)$
 
 ## Math
 **Log properties**
