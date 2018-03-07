@@ -33,6 +33,14 @@ $g^{\prime}(x)\neq 0$ for all $x$ in $I$ with $x\neq c$ and $\lim\limits_{x\to c
 
 then $\lim\limits_{x\to c} \frac{f(x)}{g(x)} = \lim\limits_{x\to c} \frac{f^{\prime}(x)}{g^{\prime}(x)}$
 
+**Markov Inequality**
+
+For a positive random variable $X \leq 0$, 
+
+$$Pr[X > b] \leq \frac{E[X]}{b}$$
+
+Prove: $E[X] = \sum_x xPr(X=x) \leq \sum_{x\leq b} bPr(X=x) = bPr(X\leq b)$
+
 ## Math
 **Log properties**
 
