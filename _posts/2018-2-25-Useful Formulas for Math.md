@@ -68,10 +68,10 @@ $tr(ABC) = tr(CAB) = tr(BCA)$ which is called cyclic property of trace.
 
 $\nabla_{A} tr(AB) = b^{T}$
 
-$\nabla_{A^T} f(A) = (\abla_A f(A))^T$
+$\nabla_{A^T} f(A) = (\nabla_A f(A))^T$
 
-$\abla_A tr(ABA^TC) = CAB + C^TAB^T$
+$\nabla_A tr(ABA^TC) = CAB + C^TAB^T$
 
-$\abla_A \lvert A\rvert = \lvert A\rvert (A^{-1})^T$
+$\nabla_A \lvert A\rvert = \lvert A\rvert (A^{-1})^T$
 
 
