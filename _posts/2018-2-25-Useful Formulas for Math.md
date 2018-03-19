@@ -60,4 +60,18 @@ $\sum\limits_{i=1}^{n} \frac{1}{i} = \ln{n} + \gamma + \frac{1}{2n} - \frac{1}{1
 
 $$\log_2 n! = n\log_2 n - (\log_2 e)n + \mathcal{O}(\log_2 n)$$
 
+**Trace Properties** 
+
+$tr(AB) = tr(BA)$
+
+$tr(ABC) = tr(CAB) = tr(BCA)$ which is called cyclic property of trace.
+
+$\nabla_{A} tr(AB) = b^{T}$
+
+$\nabla_{A^T} f(A) = (\abla_A f(A))^T$
+
+$\abla_A tr(ABA^TC) = CAB + C^TAB^T$
+
+$\abla_A \lvert A\rvert = \lvert A\rvert (A^{-1})^T$
+
 
