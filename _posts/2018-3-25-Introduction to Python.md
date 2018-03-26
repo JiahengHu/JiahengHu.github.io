@@ -1,6 +1,6 @@
 In this post, I wll mainly post the supplementary materials for the class I am teaching, including shell script, code and etc. I will update it regularly. 
 
-##First Class(2018-3-26)
+## First Class(2018-3-26)
 1. By using `cd` command in both Wdinows and Mac, One can switch directories. 
 2. "Hello World" example:
 ```python
