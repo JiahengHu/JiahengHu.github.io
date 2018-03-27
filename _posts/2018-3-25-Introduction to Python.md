@@ -16,3 +16,9 @@ age = input("What is your age?")
 print "Your age is:" + age
 ```
 4. To run the saved script (`test.py`), one should first use `cd` to switch to the path where the `test.py` is saved and then type `python test.py` with `Enter` to run de command. 
+
+{% highlight ruby %}
+def foo
+  puts 'foo'
+end
+{% endhighlight %}
