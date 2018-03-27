@@ -21,5 +21,5 @@ age = input("What is your age?")
 print "Your age is:" + age
 {% endhighlight %}
 
-4 To run the saved script (**test.py**), one should first use {% highlight python %}cd{% endhighlight %} to switch to the path where the **test.py** is saved and then type {% highlight python %}python test.py{% endhighlight %} with **Enter** to run de command. 
+4 To run the saved script (**test.py**), one should first use {% highlight python %}cd{% endhighlight %} to switch to the path where the **test.py** is saved and then type {% highlight python %}python test.py{% endhighlight %} with **Enter** to run the program. 
 
