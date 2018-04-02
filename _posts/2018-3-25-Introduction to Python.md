@@ -23,3 +23,8 @@ print "Your age is:" + age
 
 4 To run the saved script (**test.py**), one should first use {% highlight python %}cd{% endhighlight %} to switch to the path where the **test.py** is saved and then type {% highlight python %}python test.py{% endhighlight %} with **Enter** to run the program. 
 
+
+## Second Class(2018-4-01)
+some text and [here is possible to download the file in PDF][1]
+
+[1]:{{ site.url }}/download/Python基础和人工智能课程（第二讲).pdf
