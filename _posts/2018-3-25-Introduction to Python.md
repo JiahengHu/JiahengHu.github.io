@@ -25,6 +25,91 @@ print "Your age is:" + age
 
 
 ## Second Class(2018-4-01)
-some text and [here is possible to download the file in PDF][1]
+The slides presented in class can be found at [here][1]
 
 [1]:{{ site.url }}/download/Python基础和人工智能课程（第二讲).pdf
+
+{% highlight python %}
+# this is comment 
+# this is also comment
+import numpy as np #this is comment 
+# this is comment
+import scipy
+
+
+a = 1
+print a
+b = 10000
+print b
+
+print a
+a = 1.0
+
+b = 3.1415926
+print b
+
+
+a = 1
+b = 2.0
+print a/b
+print b/a
+
+a = 1.6
+b = int(a)
+print b
+
+a = 1
+b = float(a)
+print b
+
+a = True
+b = False
+print a
+print b
+
+a = 1
+b = 1.0
+print a == b
+
+a = '6'
+b = 6
+print a == b
+
+a = 'resent'
+print a[0]
+print a[0:5]
+print a[-1]
+print a[2:]
+print a[:3]
+
+a = 'I love'
+b = 'reading'
+
+print a + b
+print a + ' ' + b
+
+
+a = np.array([[1,2,3],[4,5,6]])
+print a[0,:]
+
+a = [1,2,3,4,5]
+print len(a)
+print a[0:2]
+print max(a)
+a.append(6)
+print a
+del a[-1]
+print a
+
+a = 3
+b = 5
+a += b
+a = a + b
+print a
+
+a = True
+b = True
+
+print a and b
+
+{% endhighlight %}
