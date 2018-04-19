@@ -119,7 +119,7 @@ print a and b
 ## Third Class(2018-4-05)
 The slides presented in class can be found at [here][2]
 
-[2]:{{ site.url }}/download/Python和人工智能基础课程(第三讲).pdf
+[2]:{{ site.url }}/download/Python和人工智能基础课程(第三课).pdf
 
 The codes done in the class can be found below. 
 
@@ -239,3 +239,4 @@ print localtime
 a = 'abcsdadhe'
 {% endhighlight %}
 
+## Fourth Class(2018-4-15)
