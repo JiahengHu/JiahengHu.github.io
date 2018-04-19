@@ -27,7 +27,7 @@ print "Your age is:" + age
 ## Second Class(2018-4-01)
 The slides presented in class can be found at [here][1]
 
-[1]:{{ site.url }}/download/Python基础和人工智能课程（第二讲).pdf
+[1]:{{ site.url }}/download/Python基础和人工智能课程(第二讲).pdf
 
 The codes done in the class can be found below. 
 
