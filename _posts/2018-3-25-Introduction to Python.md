@@ -240,3 +240,97 @@ a = 'abcsdadhe'
 {% endhighlight %}
 
 ## Fourth Class(2018-4-15)
+
+The slides presented in class can be found at [here][3]
+
+[3]:{{ site.url }}/download/Python和人工智能基础课程(第四课).pdf
+
+The codes of test.py done in the class can be found below. 
+
+{% highlight python %}
+
+import numpy
+import scipy
+
+val_ls = []
+while True:
+	val = input('what is your number?')
+	if len(val_ls) < 10:
+		#at this point, this list is already sorted
+		# find the proper index of the elements
+		idx = -1
+		for counter in range(0,len(val_ls)):
+			if val_ls[counter] > val and val_ls[counter-1] < val:
+				idx = counter
+				break
+		#insert element at the index
+
+	else:
+		#if len(list) > 10
+		#at this point, this list is already sorted
+		# find the proper index of the elements
+		idx = -1
+		for counter in range(0,len(val_ls)):
+			if val_ls[counter] > val and val_ls[counter-1] < val:
+				idx = counter
+				break
+		#insert element at the index
+		#delete last element
+
+
+
+str_1 = 'abaced'
+str_1 = 'aabaced'
+
+
+def num_multiplication(num1,num2):
+	results = num1*num2
+	return results
+
+test = num_multiplication(10,20)
+print test
+
+def money_for_gf(my_income,ratio=0.8):
+	money4gf = my_income*ratio
+	return money4gf
+
+my_salary = 8000
+print money_for_gf(my_income=my_salary)
+to_gf = money_for_gf(my_salary)
+print to_gf
+print money_for_gf(8000)
+
+def mulplication(num1,*var_tuple):
+	print num1
+	for ele in var_tuple:
+		print ele
+
+mulplication(10,20)
+print 'another length'
+mulplication(10,20,30,40)
+
+adding = lambda x,y:x+y
+
+print adding(10,20)
+
+a= 6
+
+def numbers_test(a):
+	a = 5
+	print a
+numbers_test(a)	
+print a
+from test_pkg import welcome
+
+welcome()
+
+{% endhighlight %}
+
+The codes in test_pkg.py can be found below:
+
+{% highlight python %}
+a = 10
+
+def welcome():
+	print 'hello world'
+{% endhighlight %}
