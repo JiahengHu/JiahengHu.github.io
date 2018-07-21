@@ -62,7 +62,9 @@ Solution: Let $X_{ij} = \mathbb{1}$[persons i and j have the same birthday], the
 
 **8 You sample 36 apples from a farm's harvest of over 20000 apples. The mean weight of the samles is 112 grams with 40 gram STD. What is the probabiliyt that the mean wieght os all 20000 apples is within 100 to 124 grams?**
 
-Solution: This question involves the knowledge of mean and STD of sample mean and can be extended to Central Limit Theorem. The questions actually asks to find the distribution of sample mean. What is the mean and STD of sample mean? Thus, let $\mu$ be the mean weights of all apples, $\sigma$ be the standard deviation of all apples, $\bar{x}$ be the sample mean, S be the sample STD, $\mu_{\bar{x}}$ be the mean of sample mean, $\sigma_{\bar{x}}$ be the STD of sample mean and $X_i$ be the weight of an apple sampled at i-th time where $1\leq i \geq n and n the number of samples$. The last two are of the interests. 
+Solution: This question involves the knowledge of mean and STD of sample mean and can be extended to Central Limit Theorem. The questions actually asks to find the distribution of sample mean. What is the mean and STD of sample mean? Thus, let $\mu$ be the mean weights of all apples, $\sigma$ be the standard deviation of all apples, $\bar{x}$ be the sample mean, S be the sample STD, $\mu_{\bar{x}}$ be the mean of sample mean, $\sigma_{\bar{x}}$ be the STD of sample mean and $X_i$ be the weight of an apple sampled at i-th time where $1\leq i \leq n$ and n the number of samples. The last two are of the interests. 
 
-$$\mu_{\bar{x}} =  \text{mean}(\frac{\sum\limits_{i=1}^{n} X_i}{n}) = $$
+$$\mu_{\bar{x}} =  \text{mean}(\frac{\sum\limits_{i=1}^{n} X_i}{n}) = \frac{\text{mean}(\sum\limits_{i=1}^{n} X_i})}{n} = \frac{\sum\limits_{i=1}^{n} \text{mean}(X_i)}{n} = \bar{x}$$
+
+$$\sigma_{\bar{x}} = \text{Var}(\frac{\sum\limits_{i=1}^{n} X_i}{n}) = \frac{\text{Var}(\sum\limits_{i=1}^{n} X_i})}{n^2} = \frac{\sum\limits_{i=1}^{n} \text{Var}(X_i)}{n^2} = S \approx \sigma$$
 
