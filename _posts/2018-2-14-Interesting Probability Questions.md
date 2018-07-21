@@ -62,5 +62,7 @@ Solution: Let $X_{ij} = \mathbb{1}$[persons i and j have the same birthday], the
 
 **8 You sample 36 apples from a farm's harvest of over 20000 apples. The mean weight of the samles is 112 grams with 40 gram STD. What is the probabiliyt that the mean wieght os all 20000 apples is within 100 to 124 grams?**
 
-Solution: This question involves the knowledge of mean and STD of sample mean and can be extended to Central Limit Theorem. Let $\mu$ be the mean weights of all apples. 
+Solution: This question involves the knowledge of mean and STD of sample mean and can be extended to Central Limit Theorem. The questions actually asks to find the distribution of sample mean. What is the mean and STD of sample mean? Thus, let $\mu$ be the mean weights of all apples, $\sigma$ be the standard deviation of all apples, $\bar{x}$ be the sample mean, S be the sample STD, $\mu_{\bar{x}}$ be the mean of sample mean and $\sigma_{\bar{x}}$ be the STD of sample mean. The last two are of the interests. 
+
+$$\mu_{\bar{x}} =  $$
 
