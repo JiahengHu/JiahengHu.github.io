@@ -68,5 +68,5 @@ $$\mu_{\bar{x}} =  \text{mean}(\frac{\sum\limits_{i=1}^{n} X_i}{n}) = \frac{\tex
 
 $$\sigma_{\bar{x}} = \text{Var}(\frac{\sum\limits_{i=1}^{n} X_i}{n}) = \frac{\text{Var}(\sum\limits_{i=1}^{n} X_i)}{n^2} = \frac{\sum\limits_{i=1}^{n} \text{Var}(X_i)}{n^2} = \frac{S}{\sqrt{n}} \text{where} S \approx \sigma$$
 
-
+Extension: Central Limit Theorem.
 
