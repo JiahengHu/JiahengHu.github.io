@@ -66,9 +66,9 @@ Solution: This question involves the knowledge of mean and STD of sample mean an
 
 $$\mu_{\bar{x}} =  \text{mean}(\frac{\sum\limits_{i=1}^{n} X_i}{n}) $$
 
-$$= \frac{\text{mean}(\sum\limits_{i=1}^{n} X_i})}{n} $$
+$$= \frac{\text{mean}(\sum\limits_{i=1}^{n} X_i)}{n} $$
 
 $$ = \frac{\sum\limits_{i=1}^{n} \text{mean}(X_i)}{n} = \bar{x}$$
 
-$$\sigma_{\bar{x}} = \text{Var}(\frac{\sum\limits_{i=1}^{n} X_i}{n}) = \frac{\text{Var}(\sum\limits_{i=1}^{n} X_i})}{n^2} = \frac{\sum\limits_{i=1}^{n} \text{Var}(X_i)}{n^2} = S \approx \sigma$$
+$$\sigma_{\bar{x}} = \text{Var}(\frac{\sum\limits_{i=1}^{n} X_i}{n}) = \frac{\text{Var}(\sum\limits_{i=1}^{n} X_i)}{n^2} = \frac{\sum\limits_{i=1}^{n} \text{Var}(X_i)}{n^2} = S \approx \sigma$$
 
