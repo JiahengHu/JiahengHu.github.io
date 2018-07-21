@@ -59,3 +59,8 @@ $$E[X] = \sum\limits_{i=1}^{n} E[Y_i] = 1$$
 
 Solution: Let $X_{ij} = \mathbb{1}$[persons i and j have the same birthday], then $E[X_{ij}] = \frac{n}{n^2}$. The total expected number of pairs of same birthday is $E[\sum X_{ij}]=\sum E[X_{ij}]=\frac{k(k-1)}{2n}$ where $k$ is the number of people we should have and $n$ is 365 days in this case. Let the equation equal to 1 so that we can solve for $k$.
 
+
+**8 You sample 36 apples from a farm's harvest of over 20000 apples. The mean weight of the samles is 112 grams with 40 gram STD. What is the probabiliyt that the mean wieght os all 20000 apples is within 100 to 124 grams?**
+
+Solution: This question involves the knowledge of mean and STD of sample mean and can be extended to Central Limit Theorem. Let $\mu$ be the mean weights of all apples. 
+
