@@ -74,4 +74,15 @@ $\nabla_A tr(ABA^TC) = CAB + C^TAB^T$
 
 $\nabla_A \lvert A\rvert = \lvert A\rvert (A^{-1})^T$
 
+**Woodbury Matrix Identity**
+
+It says that for any given A with n by n and U with n by k and C with k by k and V with k by n such that A and C are nonsingular, we have :
+
+$$(A + UCV)^{-1} = A{^-1} - A^{-1}U(C^{-1} + VA^{-1}U)^{-1}VA$$
+
+Proof can be found on Wiki easily. 
+
+
+
+
 
