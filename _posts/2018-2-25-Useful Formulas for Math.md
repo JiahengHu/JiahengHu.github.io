@@ -93,17 +93,22 @@ Let's denote a function $f:\mathbb{R}^n\mapsto\mathbb{R}$. The gradient of the f
 
 $$\triangledown_x f = \frac{\partial}{\partial x}f = \begin{bmatrix} \frac{\partial f}{\partial x_1} \\ \frac{\partial f}{\partial x_2} \\ \vdots \\ \frac{\partial f}{\partial x_n} \end{bmatrix}$$
 
-It simply says that for a function which takes a vector as input and a scaler as output, the gradient of the function is a column vector which each element is the derivative of f with respect to a single component of x. 
+It simply says that for a function which takes a vector as input and a scaler as output, the gradient of the function is a column vector which each element is the derivative of f with respect to a single component of x. The i-th element indicates how the change rate of function is with respect to i-th variable or i-th dimension. 
 
-For example, $y = x^Tz$ where $x \in \mathbb{R}^n$ should be a good practice to work. 
+For example, $y = x^Tz$ where $x \in \mathbb{R}^n$ should be a good practice to work on. 
 
 ### Jacobian Matrix
 
-For Jacobian, the case is more complicated. Let's denote a function $f:\mathbb{R}^n\mapsto\mathbb{R}^m$. The gradient of the function is defined as:
+For Jacobian, the case is more complicated. Let's denote a function $f:\mathbb{R}^n\mapsto\mathbb{R}^m$. The Jacobian of the function is defined as:
 
-$$Jac_x f = \begin{bmatrix} \frac{\partial f_1}{\partial x_1} & \frac{\partial f_1}{\partial x_2} & \dots & \frac{\partial f_1}{\partial x_n}\\ \frac{\partial f_2}{\partial x_1} & \frac{\partial f_2}{\partial x_2} & \dots & \frac{\partial f_2}{\partial x_n} \\ \vdots & \vdots & \dots \\ \frac{\partial f_m}{\partial x_1} & \frac{\partial f_m}{\partial x_2} & \dots & \frac{\partial f_m}{\partial x_n} \end{bmatrix}$$
+$$J_x(f) = \begin{bmatrix} \frac{\partial f_1}{\partial x_1} & \frac{\partial f_1}{\partial x_2} & \dots & \frac{\partial f_1}{\partial x_n}\\ \frac{\partial f_2}{\partial x_1} & \frac{\partial f_2}{\partial x_2} & \dots & \frac{\partial f_2}{\partial x_n} \\ \vdots & \vdots & \dots & \vdots \\ \frac{\partial f_m}{\partial x_1} & \frac{\partial f_m}{\partial x_2} & \dots & \frac{\partial f_m}{\partial x_n} \end{bmatrix}$$
 
+It says that if we have a function which takes a vector as input and putput a vector, the Jacobian of this function is a matrix described above. The $J_{i,j}$ says about how the change rate of i-th function is with respect to j-th variable. 
 
+For example, $f(x,y) = (x^2 + y, y^3)$ should a good one to try. 
 
+### Hessian Matrix
 
+Whereas gradient and Jacobian are somewhat like a first order derivative, Hessian is somewhat for second order partial derivative. Let's denote a function $f:\mathbb{R}^n\mapsto\mathbb{R}$. The Hessian of the function is defined as:
 
+$$H_x f = \begin{bmatrix} \frac{\partial^2 f}{\partial x_1^2} & \frac{\partial^2 f}{\partial x_1 \partial x_2} & \dots & \frac{\partial^2 f}{\partial x_1 \partial x_n}\\ \frac{\partial^2 f}{\partial x_2 \partial x_1} & \frac{\partial^2 f}{\partial x_2^2} & \dots & \frac{\partial^2 f}{\partial x_2 \partial x_n} \\ \vdots & \vdots & \dots &\vdots \\ \frac{\partial^2 f}{\partial x_n \partial x_1} & \frac{\partial^2 f}{\partial x_b \partial x_2} & \dots & \frac{\partial^2 f}{\partial x_n^2} \end{bmatrix}$$
