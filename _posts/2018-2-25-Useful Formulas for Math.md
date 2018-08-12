@@ -101,7 +101,7 @@ For example, $y = x^Tz$ where $x \in \mathbb{R}^n$ should be a good practice to 
 
 For Jacobian, the case is more complicated. Let's denote a function $f:\mathbb{R}^n\mapsto\mathbb{R}^m$. The gradient of the function is defined as:
 
-$$Jac_x(f) = \begin{bmatrix} \frac{\partial f}{\partial x_1} \\ \frac{\partial f}{\partial x_2} \\ \vdots \\ \frac{\partial f}{\partial x_n} \end{bmatrix}$$
+$$Jac_x(f) = \begin{bmatrix} \frac{\partial f_1}{\partial x_1} & \frac{\partial f_1}{\partial x_2} & \dots & \frac{\partial f_1}{\partial x_n} \\ \frac{\partial f_2}{\partial x_1} & \frac{\partial f_2}{\partial x_2} & \dots & \frac{\partial f_2}{\partial x_n} \\ \vdots & \vdots & & \vdots \\ \frac{\partial f_m}{\partial x_1} & \frac{\partial f_m}{\partial x_2} & \dots & \frac{\partial f_m}{\partial x_n}} \end{bmatrix}$$
 
 
 
