@@ -111,4 +111,8 @@ For example, $f(x,y) = (x^2 + y, y^3)$ should a good one to try.
 
 Whereas gradient and Jacobian are somewhat like a first order derivative, Hessian is somewhat for second order partial derivative. Let's denote a function $f:\mathbb{R}^n\mapsto\mathbb{R}$. The Hessian of the function is defined as:
 
-$$H_x f = \begin{bmatrix} \frac{\partial^2 f}{\partial x_1^2} & \frac{\partial^2 f}{\partial x_1 \partial x_2} & \dots & \frac{\partial^2 f}{\partial x_1 \partial x_n}\\ \frac{\partial^2 f}{\partial x_2 \partial x_1} & \frac{\partial^2 f}{\partial x_2^2} & \dots & \frac{\partial^2 f}{\partial x_2 \partial x_n} \\ \vdots & \vdots & \dots &\vdots \\ \frac{\partial^2 f}{\partial x_n \partial x_1} & \frac{\partial^2 f}{\partial x_b \partial x_2} & \dots & \frac{\partial^2 f}{\partial x_n^2} \end{bmatrix}$$
+$$H_x(f) = \begin{bmatrix} \frac{\partial^2 f}{\partial x_1^2} & \frac{\partial^2 f}{\partial x_1 \partial x_2} & \dots & \frac{\partial^2 f}{\partial x_1 \partial x_n}\\ \frac{\partial^2 f}{\partial x_2 \partial x_1} & \frac{\partial^2 f}{\partial x_2^2} & \dots & \frac{\partial^2 f}{\partial x_2 \partial x_n} \\ \vdots & \vdots & \dots &\vdots \\ \frac{\partial^2 f}{\partial x_n \partial x_1} & \frac{\partial^2 f}{\partial x_b \partial x_2} & \dots & \frac{\partial^2 f}{\partial x_n^2} \end{bmatrix}$$
+
+The $H_{i,j}$ indicates how the change rate of the function is with respect to i-th variable and j-th variable where i and j might be same. 
+
+For example, $f(x,y,z) = x^2 + y^2 + z^2$ could be an example for practice. 
