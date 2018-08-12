@@ -91,7 +91,7 @@ Proof can be found on Wiki easily.
 
 Let's denote a function $f:\mathbb{R}^n\mapsto\mathbb{R}$. The gradient of the function is defined as:
 
-$$\triangledown_x f = \frac{\partial}{\partial x}f = \begin{bmatrix}\frac{\partial f}{\partial x_1} \\ 1 \end{bmatrix}$$
+$$\triangledown_x f = \frac{\partial}{\partial x}f = \begin{bmatrix}\frac{\partial f}{\partial x_1} \\ \vdots \\ \frac{\partial f}{\partial x_n} \end{bmatrix}$$
 
 It simply says that for a function which takes a vector as input and a scaler as output, the gradient of the function is a column vector which each element is the derivative of f with respect to a single component of x. 
 
