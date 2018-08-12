@@ -85,6 +85,24 @@ $$(A + UCV)^{-1} = A{^-1} - A^{-1}U(C^{-1} + VA^{-1}U)^{-1}VA$$
 
 Proof can be found on Wiki easily. 
 
+## Vector Calculus
+
+### Gradient
+
+Let's denote a function $f:\mathbb{R}^n\mapsto\mathbb{R}$. The gradient of the function is defined as:
+
+$$\triangledown_x f = \frac{\partial}{\partial x}f = \𝚋𝚎𝚐𝚒𝚗{𝚋𝚖𝚊𝚝𝚛𝚒𝚡}\frac{\partial f}{\partial x_1} \\ \frac{\partial f}{\partial x_2} \\ \dots \\ \frac{\partial f}{\partial x_n}\𝚎𝚗𝚍{𝚋𝚖𝚊𝚝𝚛𝚒𝚡}$$
+
+It simply says that for a function which takes a vector as input and a scaler as output, the gradient of the function is a column vector which each element is the derivative of f with respect to a single component of x. 
+
+For example, $y = x^Tz$ where $x \in \mathbb{R}^n$ should be a good practice to work. 
+
+### Jacobian Matrix
+
+For Jacobian, the case is more complicated. Let's denote a function $f:\mathbb{R}^n\mapsto\mathbb{R}^m$. The gradient of the function is defined as:
+
+$$Jac_x(f) = \𝚋𝚎𝚐𝚒𝚗{𝚋𝚖𝚊𝚝𝚛𝚒𝚡}\frac{\partial f_1}{\partial x_1} & \frac{\partial f_1}{\partial x_2} & \dots & \frac{\partial f_1}{\partial x_n} \\ \frac{\partial f_2}{\partial x_1} & \frac{\partial f_2}{\partial x_2} & \dots & \frac{\partial f_2}{\partial x_n} \\ \vdots & \vdots& &\vdots \\ \frac{\partial f_m}{\partial x_1} & \frac{\partial f_m}{\partial x_2} & \dots & \frac{\partial f_m}{\partial x_n}\𝚎𝚗𝚍{𝚋𝚖𝚊𝚝𝚛𝚒𝚡}$$
+
 
 
 
