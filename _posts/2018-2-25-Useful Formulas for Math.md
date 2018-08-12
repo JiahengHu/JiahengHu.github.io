@@ -91,7 +91,7 @@ Proof can be found on Wiki easily.
 
 Let's denote a function $f:\mathbb{R}^n\mapsto\mathbb{R}$. The gradient of the function is defined as:
 
-$$\theta_{\mathcal{P}}(w) = \begin{cases} f(w) \text{, if w satisfy primal constraints} \ \infty \text{, otherwise} \ \end{cases}$$
+$$\alpha_2^{new} = \begin{cases} H  \text{, if          }\alpha_2^{new, unclipped}>H \\ \alpha_2^{new, unclipped}  \text{, if } L\leq \alpha_2^{new, unclipped} \leq H \\ L  \text{, if          } \alpha_2^{new, unclipped} < L \\ \end{cases}$$
 
 It simply says that for a function which takes a vector as input and a scaler as output, the gradient of the function is a column vector which each element is the derivative of f with respect to a single component of x. 
 
