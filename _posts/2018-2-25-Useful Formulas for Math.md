@@ -116,3 +116,7 @@ $$H_x(f) = \begin{bmatrix} \frac{\partial^2 f}{\partial x_1^2} & \frac{\partial^
 The $H_{i,j}$ indicates how the change rate of the function is with respect to i-th variable and j-th variable where i and j might be same. 
 
 For example, $f(x,y,z) = x^2 + y^2 + z^2$ could be an example for practice. 
+
+## Negation of Logic Summary
+
+![Negation Summary](/images/MathFormula_negation.png)
