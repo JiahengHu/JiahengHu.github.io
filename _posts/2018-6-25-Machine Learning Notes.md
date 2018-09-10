@@ -1,7 +1,7 @@
 ---
 layout: post
 mathjax: true
-title: Notes for CS 229 Stanford
+title: Machine Learning Notes
 ---
 
 In this post, I mainly post thoughts from CS 229 by Prof. Andrew Ng and Machine Learning by Prof. John Paisley. It is much like self-displined. Meanwhile, I am always trying to summarize and combine what it is worth in this notes from different machine learning classes that I have been involved. 
