@@ -1059,7 +1059,7 @@ Instead, we can use **Filter feature selection** heristically. The idea is to gi
 
 One intuitive option of the sorce is to compute the correlation between each feature $x_i$ and y. In practice, we set the score to be **mutual information** as:
 
-$$MI(x_i,y) = \sum\limits_{x_i\in\{0,1}}\sum\limits_{y\in\{0,1}} p(x_i,y)\log\frac{p(x_i,y)}{p(x_i)p(y)}$$
+$$MI(x_i,y) = \sum\limits_{x_i\in\{0,1}}\sum\limits_{y\in\{0,1\}} p(x_i,y)\log\frac{p(x_i,y)}{p(x_i)p(y)}$$
 
 where we assume each feature and label is binary-valued and the summation is over the domain of the varaibles. Each probability can be calculated empirically from the training dataset. To understand this, we know that:
 
