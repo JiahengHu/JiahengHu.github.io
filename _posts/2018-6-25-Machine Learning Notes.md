@@ -1091,3 +1091,22 @@ In general, the prior is usually zero mean and unit variance. This will make MAP
 
 # Online Learning and Perceptron Algorithm
 
+We have talked about the learning paradigm where we feed a batch of training data to train a model. This is called **batch learning**. In this section, we think about the scenario where the model has to make prediction while it is continously learning on the go. This is called **online learning**.
+
+In this scenario, we have a sequnce of examples $(x^{(1)},y^2{(1)}),(x^{(2)},y^2{(2)}),\dots,(x^{(n)},y^2{(n)})$. What online learning does is to first feed $x^{(1)}$ to the model and ask model to predict, and then show $y^{(1)}$ to the model to let the model perform learning process on it. We do this for one pair of training samples at a time. Eventually, we can come up with a model which has gone through the training dataset. What we are interested in is how many errors this model makes while in online learning process. This is heavily related to the knowledge from learning theory we have discussed before. 
+
+Now, we can take perceptron algorithm as an example. We define $y\in\{-1,1\}$ for the label classes. Perceptron algorithm makes prediction based on:
+
+$$h_{\theta}(x) = g(\theta^{T}x)$$
+
+where:
+
+$$g(z) = \begin{cases} 1  \text{, if } z geq 0 \\ -1  \text{, otherwise} \\ \end{cases}$$
+
+Then the model makes the update to its parameters as:
+
+$$\theta_t = \theta_{t-1} + (h_{\theta}-y)x$$
+
+We can see that if the prediction is correct, we make no change to the parameters. Then, we have the following theorem for the bound on the number of errors made in the online process. 
+
+
