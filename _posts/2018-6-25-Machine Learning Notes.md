@@ -1101,7 +1101,7 @@ $$h_{\theta}(x) = g(\theta^{T}x)$$
 
 where:
 
-$$g(z) = \begin{cases} 1  \text{, if } z geq 0 \\ -1  \text{, otherwise} \\ \end{cases}$$
+$$g(z) = \begin{cases} 1  \text{, if } z \geq 0 \\ -1  \text{, otherwise} \\ \end{cases}$$
 
 Then the model makes the update to its parameters as:
 
@@ -1109,4 +1109,6 @@ $$\theta_t = \theta_{t-1} + (h_{\theta}-y)x$$
 
 We can see that if the prediction is correct, we make no change to the parameters. Then, we have the following theorem for the bound on the number of errors made in the online process. 
 
+**Theorem** Let a sequence of examples $(x^{(1)},y^2{(1)}),(x^{(2)},y^2{(2)}),\dots,(x^{(n)},y^2{(n)})$ be given. Suppose that $\lvert\lvert x^{(i)}\rvert\rvert\leq D$ for all i, and further that there exists a unit-length vector u ($\lvert\lvert u\rvert\rvert_2=2$) such that $y^{(i)}(u^Tx^{(i)}\geq \gamma$ for all examples in the sequence(i.e., $u^Tx^{(i)}\geq \gamma$ if $y^{(i)}=1$ and $u^Tx^{(i)}\leq -\gamma$ if $y^{(i)}=-1$ so that u separates the data with the margin at least $\gamma$). Then the total number of mistakes that the perceptron algorithm makes on this sequnece is at most $O(D/\gamma)^2$.
 
+**Proof**. 
