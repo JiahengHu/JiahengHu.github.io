@@ -1111,4 +1111,42 @@ We can see that if the prediction is correct, we make no change to the parameter
 
 **Theorem** Let a sequence of examples $(x^{(1)},y^2{(1)}),(x^{(2)},y^2{(2)}),\dots,(x^{(n)},y^2{(n)})$ be given. Suppose that $\lvert\lvert x^{(i)}\rvert\rvert\leq D$ for all i, and further that there exists a unit-length vector u ($\lvert\lvert u\rvert\rvert_2=2$) such that $y^{(i)}(u^Tx^{(i)}\geq \gamma$ for all examples in the sequence(i.e., $u^Tx^{(i)}\geq \gamma$ if $y^{(i)}=1$ and $u^Tx^{(i)}\leq -\gamma$ if $y^{(i)}=-1$ so that u separates the data with the margin at least $\gamma$). Then the total number of mistakes that the perceptron algorithm makes on this sequnece is at most $O(D/\gamma)^2$.
 
-**Proof**. 
+**Proof**. Perceptron is an online learning algorithm. That means it will feed one pair of samples at a time. We also know that perceptron algorithm only updates its parameters when it makes a mistake. Thus, let $\theta^k$ be the weights that were being used for k-th mistake. We initialize from zero vector. Thus, $\theta^1 = \overrightarror{0}$. In addition, when we make a mistake on i-th iteration, then $g((x^{(i)})^T\theta^k)\neq y^{(i)}$. This is saying:
+
+$$(x^{(i)})^T\theta^k y^{(i)} \leq 0$$
+
+The update rule is $\theta^{k+1} = \theta^k + y^{(i)}x^{(i)}$. We can multiply it by u to have:
+
+$$(\theta^{k+1})^Tu = (\theta^k)^Tu + y^{(i)}(x^{(i)})^Tu \geq (\theta^k)^Tu + \gamma$$
+
+This triggers inductive calculation, which says:
+
+$$(\theta^{k+1})^Tu \geq k\gamma$$
+
+On the other hand, we have:
+
+$$\begin{align}
+\lvert\lvert \theta^{k+1}\rvert\rvert^2 &= \lvert\lvert \theta^k + y^{(i)}x^{(i)}\rvert\rvert^2\\
+&=  \lvert\lvert\theta^k\rvert\rvert^2 + 2y^{(i)}(x^{(i)})^T\theta^k + \lvert\lvert x^{(i)}\rvert\rvert^2\\
+&\leq \lvert\lvert\theta^k\rvert\rvert^2 + \lvert\lvert x^{(i)}\rvert\rvert^2 \\
+&\leq \lvert\lvert\theta^k\rvert\rvert^2 + D^2
+\end{align}$$
+
+The third step is because last term in step 2 is a negative. Similarly, we can apply induction here to get:
+
+$$\lvert\lvert \theta^{k+1}\rvert\rvert^2 \leq kD^2$$
+
+Now, we combine everything to get:
+
+
+$$\begin{align}
+\sqrt{k}D &geq \lvert\lvert \theta^{k+1}\rvert\rvert\\
+&geq  (\theta^{k+1})^Tu\\
+&\leq k\gamma
+\end{align}$$
+
+We have second step because u is unit length vector so the product of the norms is greater than the dot product of the two. This means $k\leq (\frac{D}{\gamma})^2. Note that this bound does not inovlve in the number of training samples. So the number of mistakes perceptron made is only bounded by D and $\gamma$. 
+
+# Deep Learning
+
+
