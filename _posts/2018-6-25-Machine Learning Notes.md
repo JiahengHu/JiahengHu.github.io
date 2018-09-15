@@ -1173,11 +1173,11 @@ $$g(x) = \frac{1}{1 + \exp(-w^Tx)}$$
 
 In addition, we can have more:
 
-$$g(z) = \frac{1}{1+\exp(-z)}\text{sigmoid}$$
+$$g(z) = \frac{1}{1+\exp(-z)}\quad\text{sigmoid}$$
 
-$$g(z) = \max(z,0)\text{RelU}$$
+$$g(z) = \max(z,0)\quad\text{RelU}$$
 
-$$g(z) = \frac{\exp(z) - \exp(-z)}{\exp(z) + \exp(-z)}\text{tanh}$$
+$$g(z) = \frac{\exp(z) - \exp(-z)}{\exp(z) + \exp(-z)}\quad\text{tanh}$$
 
 Back to neuron network of price prediction, what it does for first hidden unit at first hidden layer is:
 
