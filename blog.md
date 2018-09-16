@@ -1,8 +1,5 @@
 ---
-layout: posts
-title: Blog
+layout: page
+title: Blogs
 permalink:/blog/
 ---
-
-
-test
