@@ -1,6 +1,5 @@
 ---
-layout: page
-title: Blogs
-permalink:/blog/
+layout: posts
+title: Blog
 ---
-This is for test
+
