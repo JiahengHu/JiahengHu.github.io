@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Python Class
-----
+---
 In this post, I wll mainly post the supplementary materials for the class I am teaching, including shell script, code and etc. I will update it regularly. 
 
 ## First Class(2018-3-26)
