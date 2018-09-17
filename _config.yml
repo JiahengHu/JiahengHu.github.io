@@ -100,11 +100,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
-  email            :
+  name             : "Wei Zhang"
+  avatar           : "/assets/images/wei_square_github.jpg"
+  bio              : "Nothing shown"
+  location         : "New York"
+  email            : "wz2363@columbia.edu"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
