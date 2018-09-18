@@ -2,7 +2,7 @@
 layout: single
 title: Python Class
 category: Teaching
-tag: [Python,basic]
+tags: [Python,basic]
 ---
 In this post, I wll mainly post the supplementary materials for the class I am teaching, including shell script, code and etc. I will update it regularly. 
 
