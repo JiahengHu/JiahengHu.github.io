@@ -159,6 +159,7 @@ exclude:
   - Capfile
   - CHANGELOG
   - config
+  - googlea7995681fcbbb1c5
   - Gemfile
   - Gruntfile.js
   - gulpfile.js
