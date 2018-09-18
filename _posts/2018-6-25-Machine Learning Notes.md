@@ -3,6 +3,8 @@ layout: single
 mathjax: true
 toc: true
 toc_sticky: true
+category: Machine Learning
+tag: [notes]
 title: Machine Learning Notes
 ---
 
