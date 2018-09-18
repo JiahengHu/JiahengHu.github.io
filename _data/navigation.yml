@@ -8,6 +8,8 @@ main:
     url: https://wei2624.github.io/blog/
   - title: "Categories"
     url: https://wei2624.github.io/categories/
+  - title: 'Tags"
+    url: https://wei2624.github.io/tags/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
