@@ -5,7 +5,9 @@ main:
   - title: "CV"
     url: https://wei2624.github.io/CV/
   - title: "Blog"
-    url: https://wei2624.github.io/blog
+    url: https://wei2624.github.io/blog/
+  - title: "Categories"
+    url: https://wei2624.github.io/categories/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
