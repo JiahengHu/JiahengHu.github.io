@@ -85,8 +85,6 @@
 
     &.sticky {
       @include clearfix();
-      position: -webkit-sticky;
-      position: sticky;
       top: 2em;
       float: right;
       overflow-y: auto;
@@ -118,8 +116,8 @@
 .author__avatar {
   display: table-cell;
   vertical-align: top;
-  width: 36px;
-  height: 36px;
+  width: 70px;
+  height: 70px;
 
   @include breakpoint($large) {
     display: block;
