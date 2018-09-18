@@ -2,6 +2,7 @@
 layout: single
 mathjax: true
 toc: true
+toc_sticky: true
 title: Useful Formulas for Math
 ---
 
