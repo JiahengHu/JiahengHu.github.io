@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: categories
 title: Categories
 permalink: /categories
 ---
