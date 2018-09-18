@@ -1,6 +1,8 @@
 ---
 layout: single
 mathjax: true
+toc: true
+toc_sticky: true
 title: Machine Learning Notes
 ---
 
