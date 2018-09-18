@@ -1,6 +1,8 @@
 ---
 layout: single
 mathjax: true
+category: Stats
+tag: [notes,math,interview]
 title: Interesting Probability Questions
 ---
 
