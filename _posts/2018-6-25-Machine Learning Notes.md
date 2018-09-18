@@ -59,3 +59,235 @@ where m is the number of training examples and j can span the dimension of featu
 ![Batch Gradient Descent](/images/cs229_lec1_bgd.png)
 
 Note that in the updating, we run through all the samples to make one step forward to local min. This step is computationally expensive if m is very large. Thus,in this case, we introduce a similar algortihm called **stochastic gradient descent** where only a small part of samples are fed into the algorithm. By doing this, we can converge faster although it might oscillate a lot. It will produce good approximation to the global minimum. Thus, we use this often in reality. 
+
+## 2 Normal Equations
+
+In the section above, we use the iterative algorithm to find the minimum. This method is used usually when the solution to the derivative equal to zero is intractable. If we are able to find the derivative and solve when it is zero, we can explicitly calculate the local minimum. Before going through, we need the memory refresher for the math!
+
+### Matrix derivatives
+
+Some of the concepts are discussed in the other post,which you can find it [here](https://wei2624.github.io/Useful-Formulas-for-Math/).
+
+In this subsection, I will talk about trace operator in linear algebra. Basically, the trace operation is defined as:
+
+$$trA = \sum\limits_{i=1}^n A_{ii}$$
+
+where A must be a square matrix. Now, I will list the properties of trace and write proof if time permitted. 
+
+$$trAB = trBA$$
+
+$$trABC = trCAB = trBCA$$
+
+$$trABCD = trDABC = trCDAB = trBCDA$$
+
+$$trA = trA^T$$
+
+$$tr(A+B) = trA + trB$$
+
+$$tr\alpha A = \alpha trA$$
+
+$$\triangledown_A trAB = B^T$$
+
+$$\triangledown_{A^T}f(A) = (\triangledown_A f(A))^T$$
+
+$$\triangledown_A trABA^TC = CAB + C^TAB^T$$
+
+$$\triangledown_A \lvert A \rvert = \lvert A \rvert(A^{-1})^T$$
+
+### Least Square revisited
+
+So now instead of iteratively finding the solution, we explicitly calculate the derivative of the cost function and set to zero for producing the solution in one shot. 
+
+We define training data as :
+
+$$X = \begin{bmatrix} -(x^{(1)})^T-\\ -(x^{(2)})^T- \\ \vdots  \\ -(x^{(m)})^T- \end{bmatrix}$$
+
+and its target values as:
+
+$$\overrightarrow{y} = \begin{bmatrix} y^{(1)}\\ y^{(2)} \\ \vdots  \\ y^{(m)} \end{bmatrix}$$
+
+Let hypothesis be $h_{\theta}(x^{(i)}) = (x^{(i)})^T\theta$ and we have:
+
+$$X\theta - \overrightarrow{y} = \begin{bmatrix} h_{\theta}(x^{(1)}) - y^{(1)}\\ h_{\theta}(x^{(2)}) - y^{(2)} \\ \vdots  \\ h_{\theta}(x^{(m)}) - y^{(m)} \end{bmatrix}$$
+
+Thus, 
+
+$$J(\theta) = \frac{1}{2}(X\theta - \overrightarrow{y})^T(X\theta - \overrightarrow{y}) = \frac{1}{2}\sum\limits_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)})^2$$
+
+So at this point,we need to find the the derivative of J with respect to $\theta$. From the properties of trace, we know that:
+
+$$\triangledown_{A^T}trABA^TC = B^TA^TC^T + BA^TC$$
+
+We also know the trace of scaler is itself. Then:
+
+$$\begin{align}
+\triangledown_{\theta}J(\theta) &= \triangledown_{\theta}\frac{1}{2}(X\theta - \overrightarrow{y})^T(X\theta - \overrightarrow{y})\\
+&= \frac{1}{2}\triangledown_{\theta} tr(\theta^TX^TX\theta - \theta^TX^T\overrightarrow{y} - \overrightarrow{y}^TX\theta + \overrightarrow{y}^T\overrightarrow{y} \\
+&= \frac{1}{2}\triangledown_{\theta} (tr\theta^TX^TX\theta - 2tr\overrightarrow{y}^TX\theta)\\
+&= \frac{1}{2}(X^TX\theta + X^TX\theta - 2X^T\overrightarrow{y})\\
+&= X^X\theta - X^T\overrightarrow{y}
+\end{align}$$
+
+We set it to zero and we obtain normal equation:
+
+$$X^TX\theta = X^T\overrightarrow{y}$$
+
+Then, we should update parameter as:
+
+$$\theta = (X^TX)^{-1}X^T\overrightarrow{y}$$
+
+## 3 Probabilistic interpretation
+
+We assume that the target variable and the inputs are related as:
+
+$$y^{(i)} = \theta^Tx^{(i)} + \epsilon^{(i)}$$
+
+where $\epsilon^{(i)}$ is random variable which can capture noise and unmodeled effects. We also assume that noise are distributed IID from Gaussianw with zero mean and some variance $\sigma^2$, which is a traditional way to model. Now, we can say:
+
+$$p(y^{(i)} \lvert x^{(i)};\theta) = \frac{1}{\sqrt{2\pi \sigma}}\exp\big(-\frac{(y^{(i)} - \theta^Tx^{(i)})^2}{2\sigma^2}\big)$$
+
+This function can be viewed as the funciton and y and maybe x as well since it might be some randomness on feature vectors as well with fixed parameter $\theta$. Thus, we can call it likelihood function:
+
+$$L(\theta) = \prod_{i=1}^{m} p(y^{(i)} \lvert x^{(i)};\theta)$$
+
+We need to find such $\theta$ so that with the chosen $\theta$ the probability of y given a x is maximized. We call it **maximum likelihood**. To simplify, we find the max of **log likelihood**:
+
+
+$$\begin{align}
+\ell &= \log L(\theta)\\
+&= \log \prod_{i=1}^{m} \frac{1}{\sqrt{2\pi \sigma}}\exp\big(-\frac{(y^{(i)} - \theta^Tx^{(i)})^2}{2\sigma^2}\big)\\
+&= \sum\limits_{i=1}^{m} \log \frac{1}{\sqrt{2\pi \sigma}}\exp\big(-\frac{(y^{(i)} - \theta^Tx^{(i)})^2}{2\sigma^2}\big)\\
+&= m\log\frac{1}{\sqrt{2\pi\sigma}} - \frac{1}{\sigma^2}\frac{1}{2}\sum\limits_{i=1}^{m}(y^{(i)} - \theta^T x^{(i)})^2
+\end{align}$$
+
+Maximizing this with respect to $\theta$ will give the same answer as minimizing J. That means we can justify what we have done in LMS in probabilitic point of view. 
+
+## 4 Locally Weighted Linear Rgression
+
+In the regression method discussed above, we treat the cost resulted from training samples equally in the process. However, this might not be proper since some outliers should placed less weights. We implement this idea by placing weights to each sample with respect to the querying point. For example, such a weight can be:
+
+$$w^{(i)} = \exp\big(-\frac{(x^{(i)} - x)^2}{2r^2}\big)$$
+
+Although this is similar to Gaussian, it has nothing to do with it. And x is the querying point. We need to keep all the training data for new prediction. 
+
+## 5 Classification and Logistic regression
+
+We can imagine the clssification as a special regression problem where we only regress to a set of binary values, 0 and 1. Sometimes, we use -1 and 1 notation as well. We call it negative class and positive class, respectively.
+
+However, it does not make sense that we predict any values other than 0 and 1. Therefore, we modify the hypothese function to be:
+
+$$h_{\theta}(x) = g(\theta^T x) = \frac{1}{1+\exp(-\theta^Tx)}$$
+
+where g is called **logistic function or sigmoid function**. A plot of logistic function can be found below:
+
+![Logistic Function](/images/cs229_lec1_logistic.png)
+
+It ranges from 0 to 1 as output. 
+
+let's look at what it looks like when we take derivative of logistic funciton:
+
+$$\begin{align}
+\frac{d}{dz} g(z) &= \frac{1}{(1+\exp(-z))^2}\big(\exp(-z)\big)\\
+&= \frac{1}{(1+\exp(-z))}\Big(1 - \frac{1}{(1+\exp(-z))^2}\Big)\\
+&= g(z)(1-g(z))
+\end{align}$$
+
+With this prior knowledge, the question is how are we supposed to find $\theta$. So we know least square regression can be derived from maximum likelihood algorithm, which is where we should start from. 
+
+We assume:
+
+$$P(y \lvert x;\theta) = (h_{\theta}(x))^y (1 - h_{\theta}(x))^{1-y}$$
+
+where y should be either one or zero. Assuming that samples are iid, we have likelihood as:
+
+$$\begin{align}
+L(\theta) &= \prod_{i=1}^{m} p(y^{(i)}\lvert x^{(i)};\theta)\\
+&= \prod_{i=1}^{m} (h_{\theta}(x^{(i)}))^{y^{(i)}} (1 - h_{\theta}(x^{(i)}))^{1-y^{(i)}}
+\end{align}$$
+
+using log likelihood, we can have:
+
+$$\log L(\theta) = \sum\limits_{i=1}^m y^{(i)}\log h(x^{(i)}) + (1-y^{(i)}\log(1-h(x^{(i)})$$
+
+Then, we can use graident descent to optimize the likelihood. In updating, we should have $\theta = \theta + \alpha\triangledown_{\theta}L(\theta)$. Note we have plus sign instead of minus sign since we are finding max not min. To find the derivative, 
+
+$$\begin{align}
+\frac{\partial}{\partial\theta_j}L(\theta) &= \bigg(y\frac{1}{g(\theta^Tx)}-(1-y)\frac{1}{1-g(^Tx)}\bigg)\frac{\partial}{\partial\theta_j}g(\theta^Tx)\\
+&= \bigg(y\frac{1}{g(\theta^Tx)}-(1-y)\frac{1}{1-g(^Tx)}\bigg) g(\theta^Tx)(1 - g(\theta^Tx))\frac{\partial}{\partial\theta_j}\theta^Tx\\
+&= (y - h_{\theta}(x))x_j
+\end{align}$$
+
+From the fisrt line to second line, we use the derivative of logistic function derived above. This gives us the update rule for each dimension on feature vector. Although we have same algorithm as LMS in this case, the hypothesis in this cases is different. It is not surprising to have the same equation when we talk about Generalized Linearized Model. 
+
+## 6 Digression: The Perceptron Learning Algortihm
+
+We will talk about this in Learning Theory in more detials. In short, we change our hypothesis function to be:
+
+$$g\theta^Tx) = \begin{cases} 1  \text{, if } \theta^Tx geq 0 \\ 0  \text{, otherwise} \\ \end{cases}$$
+
+The updating equation remains the same. This is called **perceptron learning algorithm**.\
+
+## 7 Newton's Method for Maximizing
+
+So imagine that we want to find the root of a function f. Newton's method allows us to do this task in quadratic speed. The idea is to initialize $x_0$ randomly and find the tangent line of $f(x_0)$,dentoed $f^{\prime}(x_0)$. We use the root of $f^{\prime}(x_0)$ as new x. We also define the distance between new x and old x as $\Delta$. An example of this can be shown as:
+
+![Newton's Method](/images/cs229_lec1_newton.png)
+
+So we now have:
+
+$$f^{\prime}(x_0) = \frac{f(x_0)}{\Delta} \Rightarrow \Delta = \frac{f(x_0)}{f^{\prime}(x_0)}$$
+
+Derived from this idea, we can let $f(x) = L^{\prime}(\theta)$. Going this way, we can find max of objective function faster. For finding min, it is similar. 
+
+If $\theta$ is vector-valued, we need to use Hessian in the updating. More details about Hession can be found in [the other post](https://wei2624.github.io/Useful-Formulas-for-Math/). In short, to update, we have:
+
+$$\theta = \theta - H^{-1}\triangledown_{\theta}L(\theta)$$
+
+Alhtough it converges in quadratic, each updating is more costly than gradient descent. 
+
+## 8 Generalized Linear Models and Exponential Family
+
+Remeber that we have "coincidence" where the updating of logistic regression and least mean square regress ends up with same form. They are special cases in the big family called GLM. The reason why it is called linear is because every distribution in this family places a linear relationship between varaibles and their weights. 
+
+Before going to GML, we fisrt talk about exponential family distributions as the foundation to GLM. We define that a class of distribution is in the exponential family if it can be written in the form:
+
+$$p(y;\eta) = b(y)\exp(\eta^T T(y) - a(\eta))$$
+
+where $\eta$ is called **natural parameter**, $T(y)$ is called **sufficient statistic** and $a(\eta)$ is called **log partition fucntion**. Usually, $T(y) = y$ is our case. the term $-a(\eta)$ is the normalizing constant. 
+
+T,a and b are fixed parameters with which we can vary $\eta$ to establish different distribution in a class of distributuion. Now, we can show that Bernoulli and Gaussian belong to exponential family. 
+
+Bernoulli:
+
+$$\begin{align}
+p(y;\phi) &= \phi^y(1-\phi)^{1-y}\\
+&= \exp(y\log\phi + (1-y)\log(1-\phi))\\
+&= \exp\bigg(\bigg(\log\bigg(\frac{\phi}{1-\phi}\bigg)\bigg)y+\log(1-\phi)\bigg)
+\end{align}$$
+
+where:
+
+$$\eta = \log(\phi/(1-\phi))$$
+
+$$T(y) = y$$
+
+$$a(\eta) = -\log(1-\phi) = \log(1+e^{\eta})$$
+
+$$b(y) = 1$$
+
+Gaussian:
+
+$$p(y;\mu) = \frac{1}{\sqrt{2\pi}}\exp\bigg(-\frac{1}{2}y^2\bigg)\exp\bigg(\mu y - \frac{1}{2}\mu^2\bigg)$$
+
+where $\sigma$ is 1 in this case(we can still do the same thing with varying $\sigma$ and :
+
+$$\eta = \mu$$
+
+$$T(y) = y$$
+
+$$a(\eta) = \mu^2/2 = \eta^2/2$$
+
+b(y) = (1/\sqrt{2\pi})\exp(-y^2/2)$$
+
+Other exponential distribution: Multinomial, Possion, gamma and exponential, beta and Dirichlet. Since they are all in exponential family, what we can do is to study exponential family in general form and vary $\eta$ to model differently. 
+
