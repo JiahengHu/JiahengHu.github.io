@@ -3,6 +3,7 @@ layout: single
 mathjax: true
 category: Stats
 tags: [notes,math,interview]
+qr: interesting_probability_questions.png
 title: Interesting Probability Questions
 ---
 
