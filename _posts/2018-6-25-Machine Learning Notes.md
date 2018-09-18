@@ -1111,7 +1111,7 @@ We can see that if the prediction is correct, we make no change to the parameter
 
 **Theorem** Let a sequence of examples $(x^{(1)},y^2{(1)}),(x^{(2)},y^2{(2)}),\dots,(x^{(n)},y^2{(n)})$ be given. Suppose that $\lvert\lvert x^{(i)}\rvert\rvert\leq D$ for all i, and further that there exists a unit-length vector u ($\lvert\lvert u\rvert\rvert_2=2$) such that $y^{(i)}(u^Tx^{(i)}\geq \gamma$ for all examples in the sequence(i.e., $u^Tx^{(i)}\geq \gamma$ if $y^{(i)}=1$ and $u^Tx^{(i)}\leq -\gamma$ if $y^{(i)}=-1$ so that u separates the data with the margin at least $\gamma$). Then the total number of mistakes that the perceptron algorithm makes on this sequnece is at most $O(D/\gamma)^2$.
 
-**Proof**. Perceptron is an online learning algorithm. That means it will feed one pair of samples at a time. We also know that perceptron algorithm only updates its parameters when it makes a mistake. Thus, let $\theta^k$ be the weights that were being used for k-th mistake. We initialize from zero vector. Thus, $\theta^1 = \overrightarror{0}$. In addition, when we make a mistake on i-th iteration, then $g((x^{(i)})^T\theta^k)\neq y^{(i)}$. This is saying:
+**Proof**. Perceptron is an online learning algorithm. That means it will feed one pair of samples at a time. We also know that perceptron algorithm only updates its parameters when it makes a mistake. Thus, let $\theta^k$ be the weights that were being used for k-th mistake. We initialize from zero vector. Thus, $\theta^1 = \overrightarrow{0}$. In addition, when we make a mistake on i-th iteration, then $g((x^{(i)})^T\theta^k)\neq y^{(i)}$. This is saying:
 
 $$(x^{(i)})^T\theta^k y^{(i)} \leq 0$$
 
@@ -1145,3 +1145,53 @@ $$\begin{align}
 \end{align}$$
 
 We have second step because u is unit length vector so the product of the norms is greater than the dot product of the two. This means $k\leq (\frac{D}{\gamma})^2. Note that this bound does not involve in the number of training samples. So the number of mistakes perceptron made is only bounded by D and $\gamma$. 
+
+# Deep Learning
+
+## 1 Nerual Networks
+
+Recall that in the housing price prediction example. We take the size of the house as input and make predictions on price by fitting a straight line. The problem in this model is that a straight line has mathematical meaning in negative domain, which does not make sense in predicting house values. Thus, we need to perform some link function to get a plot like the one below. 
+
+![Link Function](/images/cs229_deeplearning_link.png)
+
+Mathematically, we want $f:x\rightarrow y$. To prevent a negative prediction, we can have a single neuron where $f(x) = \max(ax+b,0)$ for some a and b from training process. This is called ReLU (rectified linear unit) function. This is essentially the simplest neuron that we can have. We can also stack multiple neurons where the output of a neuron can serve as the input of the other. This can give us a more complex struture. 
+
+In the housing price prediction example, we can have multiple input such as the size of house, the number of bedrooms, the zip code and the wealth of neighborhood. We can take these features as input to the neural network. In addition, we might also find out that the size of house and the number of bedrooms are related to family size, the zip code is related to the walkable distance to stores and the wealth of neighborhoods are related to the quality of life around. Thus, we can futher say that the price of house depends more directly on these three factors. Such an idea can be realized by stacking several neurons together as:
+
+![Neuron Networks](/images/cs229_deeplearning_nn.png)
+
+Part of magic of neural networks is that we only need to feed the network with input features x and output prediction y. Everything else is called hidden units and figured out by the neural network itself. They are called hidden layers since we do not have ground truth for those nuerons and we ask network to solve for us. We cal this **end-to-end learning**. The last thing required is a large amount of training samples. The model will figure out the latent features that are helpful on prediction. Since human cannot understand the features it has produced, this renders the neural network as **black box** technology.
+
+Before going to details, let's denote $x_i$ as i-th input feature, $a_j^{[\ell]}$ as the activition output at j-th unit in layer $\ell$, $foo^{\ell}$ as everything associated with layer $\ell$ and $z=\theta^Tx$. We can draw a diagram for a single neuron for illustration as:
+
+![Neuron Networks](/images/cs229_deeplearning_neuron.png)
+
+For the choice of activition functions, we can logistic function as before:
+
+$$g(x) = \frac{1}{1 + \exp(-w^Tx)}$$
+
+In addition, we can have more:
+
+$$g(z) = \frac{1}{1+\exp(-z)}\quad\text{sigmoid}$$
+
+$$g(z) = \max(z,0)\quad\text{RelU}$$
+
+$$g(z) = \frac{\exp(z) - \exp(-z)}{\exp(z) + \exp(-z)}\quad\text{tanh}$$
+
+Back to neuron network of price prediction, what it does for first hidden unit at first hidden layer is:
+
+$$z_1^{[1]} = W_1^{[1]}x + b_1^{[1]} \quad \text{and} \quad a_1^{[1]} = g(z_1^{[1]})$$
+
+where W is parameter matrix and $W_1$ is first row of it and b is a scalar. Similarly, we can have:
+
+$$z_2^{[1]} = W_2^{[1]}x + b_2^{[1]} \quad \text{and} \quad a_2^{[1]} = g(z_3^{[1]})$$
+
+$$z_3^{[1]} = W_3^{[1]}x + b_3^{[1]} \quad \text{and} \quad a_3^{[1]} = g(z_3^{[1]})$$
+
+So the output of first layer from activition function can be defined as:
+
+$$a^{[1]} = \begin{bmatrix} a_1^{[1]}\\ a_2^{[1]} \\ a_3^{[1]}  \\ a_4^{[1]} \end{bmatrix}$$
+
+For some of tasks, we might not want to use ReLU although it is really popular in research simply becuase it is not always correct that we should have non-negative value for prediction. 
+
+## 2 Vectorization
