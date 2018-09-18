@@ -89,6 +89,8 @@
       float: right;
       overflow-y: auto;
       height: calc(100vh - #{$nav-height} - 2em);
+      position: -webkit-sticky;
+      position: sticky;
     }
   }
 
