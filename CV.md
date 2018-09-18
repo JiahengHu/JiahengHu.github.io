@@ -1,5 +1,5 @@
 ---
-layout: pdf
+layout: home
 title: CV
 permalink: /CV/
 ---
