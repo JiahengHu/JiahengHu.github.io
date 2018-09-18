@@ -3,7 +3,6 @@ layout: single
 mathjax: true
 title: Machine Learning Notes
 ---
-
 In this post, I mainly post thoughts from CS 229 by Prof. Andrew Ng and Machine Learning by Prof. John Paisley. It is much like self-displined. Meanwhile, I am always trying to summarize and combine what it is worth in this notes from different machine learning classes that I have been involved. 
 
 It is recommended that you have some basic knowledge about probability, linear algebra and vector calculus before reading the notes. The reading can be done simply from beginning to ending or be indexed from table of contents based on your needs. 
