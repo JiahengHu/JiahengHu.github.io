@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 mathjax: true
 title: Machine Learning Notes
 ---
