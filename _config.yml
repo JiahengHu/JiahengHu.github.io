@@ -21,7 +21,7 @@ title_separator          : "-"
 name                     : "Wei Zhang"
 description              : "An amazing website."
 url                      : "https://wei2624.github.io"
-baseurl                  : "https://wei2624.github.io"
+baseurl                  : #"https://wei2624.github.io"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
