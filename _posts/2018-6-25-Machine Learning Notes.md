@@ -291,3 +291,108 @@ b(y) = (1/\sqrt{2\pi})\exp(-y^2/2)$$
 
 Other exponential distribution: Multinomial, Possion, gamma and exponential, beta and Dirichlet. Since they are all in exponential family, what we can do is to study exponential family in general form and vary $\eta$ to model differently. 
 
+## 9 Constructing GLM
+
+As discussed, once we know T,a and b, the family of distribution is already determined. We only need to find $\eta$ to determine the exact distribution. 
+
+For example, assume that we want to predict y given x. Before moving on deriving GLM of this regression problem, we make three major assumption about this:
+
+**(1)** We always assume $y \lvert x;\theta \thicksim \text{ExponentialFamily}(\eta)$. 
+
+**(2)** In general, we want to predict the expected vaye of T(y) given x. Most likely, we have $T(y) = y$. Formally, we have $h(x) = \mathbb{E}[y\lvert x]$, which is true for both logistic regression and linear regression. Note that in logistic regression, we always have $\mathbb{E}[y\lvert x] = p(y=1\lvert x;\theta)$.
+
+**(3)** The input and natural parameter are related as:$\eta = \theta^Tx$
+
+### 9.1 Ordinary Least Squares
+
+In this case, we have $y\thicksim \mathcal{N}(\mu,\sigma^2)$. Previoulsy, we discussed about Gaussian as exponential family. In particular, we have:
+
+$$\begin{align}
+h_{\theta}(x) &= \mathbb{E}[y\lvert x;\theta]\\
+&= \mu\\
+&= \eta \\
+&=\theta^Tx
+\end{align}$$
+
+where the first equation is from assumption (2); the second is by definition; the third is from early derivation; the last is from assumption (3). 
+
+### 9.2 Logistic Regression
+
+In this setting, we predict either 1 or 0 for class label. Recall that, in Bernoulli, we had $\phi=1/(1+e^{\eta}$. Thus, we can derive the following equation as:
+
+$$\begin{align}
+h_{\theta}(x) = \mathbb{E}[y\lvert x;\theta]\\
+&= \phi\\
+&= 1/(1+e^{-\eta}) \\
+&= 1/(1+e^{=-\theta^Tx})
+\end{align}$$
+
+This partially explains why we came up with the form like sigmoid function. Because we assume that y follows from Bernoulli given x, it is natural to have sigmoid function resulted from exponential family. To predict, we think that expected value of $T(y)$ with respect to $\eta$ is a reasonable guess, namely **canonical response function or inverse of link function**. In general, response function is the function of $\eta$ and gives the relationships between $\eta$ and distribution parameters, while link function produces $\eta$ as a function of distribution parameter. The inversion means to express one in terms of the other, which has nothing to do with mathematical meaning of inversion.  From the derivation above, we know that the canonical response function of Bernoulli is logistic function and that of Gaussian is mean function. 
+
+### 9.3 Softmax Regression
+
+In a broader case, we can have multiple classes instead of binary classes above. It is natural to model it as Multinomial distribution, which also belongs to exponential family that can be derived from GLM. 
+
+In multinomial, we can define $\phi_1,\phi_2,\dots,\phi_{k-1}$ to be the corresponding probability of $k-1$ classes. We do not need all k classes since last is determined once the previous $k-1$ are set. So we can write $\phi_k = 1-\sum_{i=1}^{k-1}\phi_i$.
+
+We first define $T(y) \in \mathbb{R}^{k-1}$ and : 
+
+$$T(1) = \begin{bmatrix} 1\\ 0 \\ \vdots  \\ 0 \end{bmatrix}, T(2) = \begin{bmatrix} 0\\ 1 \\ \vdots  \\ 0 \end{bmatrix},\dots,T(k) = \begin{bmatrix} 0\\ 0 \\ \vdots  \\ 0 \end{bmatrix}$$
+
+Note that for $T(k)$, we just have all zeros in the vector since the length of vector is k-1. We let $T(y)_i$ define i-th element in the vector. The definition of indicator is also introduced in course notes, which I am not talking in details here. 
+
+Now, we show the steps to derive Multinomial as exponential family:
+
+$$\begin{align}
+p(y;\phi) &= \phi_1^{\mathbb{1}[y=1]}\phi_2^{\mathbb{1}[y=2]}\dots\phi_k^{\mathbb{1}[y=k]}\\
+&= \phi_1^{\mathbb{1}[y=1]}\phi_2^{\mathbb{1}[y=2]}\dots\phi_k^{1 - \sum_{i=1}^{k-1}\mathbb{1}[y=i]}\\
+&= \phi_1^{T(y)_1}\phi_2^{T(y)_2}\dots\phi_k^{1 - \sum_{i=1}^{k-1}T(y)_i} \\
+&= \exp\Big(T(y)_1\log(\phi_1/\phi_k)+T(y)_2\log(\phi_2/\phi_k) + \dots + T(y)_{k-1}\log(\phi_{k-1}/\phi_k)+ \log(\phi_k)\Big) \\
+&= b(y)\exp(\eta^TT(y) - a(\eta))
+\end{align}$$
+
+where
+
+$$\eta = \begin{bmatrix} \log(\phi_1/\phi_k)\\ \log(\phi_2/\phi_k) \\ \vdots  \\ \log(\phi_{k-1}/\phi_k) \end{bmatrix}$$
+
+and $a(\eta) = -\log(\phi_k)$ and $b(y) = 1$. 
+
+This formulates multinomial as exponenital family. We can now have the link function as:
+
+$$\eta_i = \log(\frac{\phi_i}{\phi_k})$$
+
+To get the response function, we need to invert the link function:
+
+$$e^{\eta_i} = \frac{\phi_i}{\phi_k}$$
+
+$$\phi_k e^{\eta_i} = \phi_i$$
+
+$$\phi_k \sum\limits_{i=1}^{k}e^{\eta_i} = \sum\limits_{i=1}^{k} \phi_i$$
+
+Then, we have the response function:
+
+$$\phi_i = \frac{e^{\eta_i}}{\sum_{j=1}^{k}e^{\eta_j}}$$
+
+This response function is called **softmax function**. 
+
+From the assumption (3) in GLM, we know that $\eta_i = \theta_i^Tx$ for $i=1,2,\dots,k-1$ and $\theta_i \in \mathbb{R}^{n+1}$ is the parameters of our GLM model and $\theta_k$ is just 0 so that $\eta_k = 0$. Now, we have the model based on x:
+
+$$p(y=i\lvert x;\theta) = \phi_i = \frac{e^{\eta_i}}{\sum_{j=1}^{k}e^{\eta_j}} = \frac{e^{\theta_i^T x}}{\sum_{j=1}^{k}e^{\theta_j^Tx}}$$
+
+This model is called **softmax regression**, which is a generalization of logistic regression. Thus, the hypothesis will be:
+
+$$\begin{align}
+h_{\theta}(x) &= \mathbb{E}[T(y)\lvert x;\theta]\\
+&=\begin{bmatrix} \phi_1\\ \phi_2 \\ \vdots  \\ \phi_{k-1} \end{bmatrix} \\
+&= \begin{bmatrix} \frac{\exp(\theta_1^Tx)}{\sum_{j=1}^k\exp(\theta_j^Tx)}\\ \frac{\exp(\theta_2^Tx)}{\sum_{j=1}^k\exp(\theta_j^Tx)} \\ \vdots  \\ \frac{\exp(\theta_{k-1}^Tx)}{\sum_{j=1}^k\exp(\theta_j^Tx)} \end{bmatrix}
+\end{align}$$
+
+Now, we need to fit $\theta$ such that we can max the log likelihood. by definition, we can write it out:
+
+$$\begin{align}
+L(\theta) &= \sum\limits_{i=1}^m \log(p(y^{(i)}\lvert x^{(i)};\theta)\\
+&=\sum\limits_{i=1}^m \log\prod_{l=1}^k\bigg(\frac{\exp(\theta_l^Tx)}{\sum_{j=1}^k\exp(\theta_j^Tx)}\bigg)^{\mathbb{1}{y^{(i)}=l}}
+\end{align}$$
+
+We can use gradient descent or Newton's method to find the max of it. 
+
