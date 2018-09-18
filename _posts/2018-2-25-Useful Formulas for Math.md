@@ -3,6 +3,8 @@ layout: single
 mathjax: true
 toc: true
 toc_sticky: true
+category: Math
+tag: [notes,math]
 title: Useful Formulas for Math
 ---
 
