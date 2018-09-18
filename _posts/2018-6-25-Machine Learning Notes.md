@@ -5,6 +5,7 @@ toc: true
 toc_sticky: true
 category: Machine Learning
 tags: [notes]
+qr: machine_learning_notes.png
 title: Machine Learning Notes
 ---
 
