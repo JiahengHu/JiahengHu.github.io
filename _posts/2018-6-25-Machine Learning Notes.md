@@ -1144,4 +1144,4 @@ $$\begin{align}
 &\leq k\gamma
 \end{align}$$
 
-We have second step because u is unit length vector so the product of the norms is greater than the dot product of the two. This means $k\leq (\frac{D}{\gamma})^2. Note that this bound does not inovlve in the number of training samples. So the number of mistakes perceptron made is only bounded by D and $\gamma$. 
+We have second step because u is unit length vector so the product of the norms is greater than the dot product of the two. This means $k\leq (\frac{D}{\gamma})^2. Note that this bound does not involve in the number of training samples. So the number of mistakes perceptron made is only bounded by D and $\gamma$. 
