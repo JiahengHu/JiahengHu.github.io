@@ -4,7 +4,7 @@ mathjax: true
 toc: true
 toc_sticky: true
 category: Machine Learning
-tag: [notes]
+tags: [notes]
 title: Machine Learning Notes
 ---
 
