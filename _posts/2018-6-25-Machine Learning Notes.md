@@ -1208,6 +1208,24 @@ In the previous section, we calculate each $z_i^{[1]}$ and apply activation func
 
 So for the first layer, we can have:
 
-$$\underbrace{\begin{bmatrix} z_1^{[1]}\\ z_2^{[1]} \\ z_3^{[1]}  \\ z_4^{[1]} \end{bmatrix}}_{z^{[1]}\in\mathcal{R}^{4\times 1}} = \begin{bmatrix} -(W_1^{[1]})^T-\\ -(W_2^{[1]})^T- \\ -(W_3^{[1]})^T-  \\ -(W_4^{[1]})^T- \end{bmatrix}\begin{bmatrix} x_!\\ x_2  \\ x_3 \end{bmatrix} + \begin{bmatrix} b_1^{[1]}\\ b_2^{[1]} \\ b_3^{[1]}  \\ b_4^{[1]} \end{bmatrix} $$
+$$\underbrace{\begin{bmatrix} z_1^{[1]}\\ z_2^{[1]} \\ z_3^{[1]}  \\ z_4^{[1]} \end{bmatrix}}_{z^{[1]}\in\mathcal{R}^{4\times 1}} = \underbrace{\begin{bmatrix} -(W_1^{[1]})^T-\\ -(W_2^{[1]})^T- \\ -(W_3^{[1]})^T-  \\ -(W_4^{[1]})^T- \end{bmatrix}}_{W^{[1]\in\mathcal{R}^{4\times 3}}\underbrace{\begin{bmatrix} x_!\\ x_2  \\ x_3 \end{bmatrix}}_{x\in\mathcal{R}^{3\times 1}} + \underbrace{\begin{bmatrix} b_1^{[1]}\\ b_2^{[1]} \\ b_3^{[1]}  \\ b_4^{[1]} \end{bmatrix}}_{b^{[1]}\in \mathcal{R}^{4\times 1}} $$
 
+The dimenion of each matrix is labelled below. In short, it is $z^{[1]} = W^{[1]}x + b^{[1]}$, which is linear relationship. Then, we can apply activition function on z vector like sigmoid function for example. Similarly, we can use matrix to represent the propagation from first layer to secon layer. **As you can see here, without non-linear activition function, we simply do linear regression here, which cannot model many complicated non-linear relationship.**
 
+### 2.2 Vectorization over Training Examples
+
+Now, we want to do this thing for all the training samples that going to be fed into neural network. We want to do it at one time. So we define a sample matrix:
+
+$$X = \begin{bmatrix} \lvert & \lvert & \lvert\\ x^{(1)} & x^{(2)} & x^{(3)} \\ \lvert & \lvert & \lvert \end{bmatrix}$$
+
+So we can get the outpout as :
+
+$$Z^{[1]} = \begin{bmatrix} \lvert & \lvert & \lvert\\ z^{[1](1)} & z^{[1](2)} & z^{[1](3)} \\ \lvert & \lvert & \lvert \end{bmatrix} = W^{[1]}X + b^{[1]}$$
+
+Meanwhile, we also (as always) need to define the objective function that we want to maximize. For binary class, we can have the objective function as :
+
+$$\sum\limits_{i=1}^m \big(y^{(i)}\log a^{[2](i)} + (1 - y^{(i)})\log(1 - a^{[2](i)})\big)$$
+
+We can use gradient ascent for updaing. 
+
+## 3 Backpropagation
