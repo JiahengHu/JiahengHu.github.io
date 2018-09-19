@@ -2,7 +2,7 @@
 layout: archive
 category: Online Material
 tags: [Latex]
-qr: python_class
+classes: wide
 title: LaTeX Cheat Sheet
 ---
 I post a LaTeX cheat sheet from online which I found quite useful. You can download it for your own use. 
