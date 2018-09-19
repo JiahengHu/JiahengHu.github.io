@@ -2,7 +2,7 @@
 layout: archive
 category: Online Material
 tags: [math]
-title: LaTeX Cheat Sheet
+title: CS Cheat Sheet
 ---
 I post a CS cheat sheet from online which I found quite useful, which is about simple math. You can download it for your own use. 
 
