@@ -1199,3 +1199,15 @@ $$a^{[1]} = \begin{bmatrix} a_1^{[1]}\\ a_2^{[1]} \\ a_3^{[1]}  \\ a_4^{[1]} \en
 For some of tasks, we might not want to use ReLU although it is really popular in research simply becuase it is not always correct that we should have non-negative value for prediction. 
 
 ## 2 Vectorization
+
+Now, a natural question to ask is that what the activation does and what if I remove it. Intuitively, activition functions are the key part of making deep learning work and making it possible to model non-linear relationships. Without it, what neural network does simply becomes linear combinations between weights and its input. Let's see how mathematically we can prove this. 
+
+In the previous section, we calculate each $z_i^{[1]}$ and apply activation function for each of them. We can put all of them into a matrix and take advantage of matrix calculations to speed up this process. 
+
+### 2.1 Vectorizaing the Output Computation
+
+So for the first layer, we can have:
+
+$$\underbrace{\begin{bmatrix} z_1^{[1]}\\ z_2^{[1]} \\ z_3^{[1]}  \\ z_4^{[1]} \end{bmatrix}}_{z^{[1]}\in\mathcal{R}^{4\times 1}} = \begin{bmatrix} -(W_1^{[1]})^T-\\ -(W_2^{[1]})^T- \\ -(W_3^{[1]})^T-  \\ -(W_4^{[1]})^T- \end{bmatrix}\begin{bmatrix} x_!\\ x_2  \\ x_3 \end{bmatrix} + \begin{bmatrix} b_1^{[1]}\\ b_2^{[1]} \\ b_3^{[1]}  \\ b_4^{[1]} \end{bmatrix} $$
+
+
