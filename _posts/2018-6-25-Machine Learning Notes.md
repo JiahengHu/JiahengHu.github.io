@@ -1226,6 +1226,14 @@ Meanwhile, we also (as always) need to define the objective function that we wan
 
 $$\sum\limits_{i=1}^m \big(y^{(i)}\log a^{[2](i)} + (1 - y^{(i)})\log(1 - a^{[2](i)})\big)$$
 
-We can use gradient ascent for updaing. 
+where $a^{[2](i)}$ is the output from second layer (also the final layer) for i-th training sample. Remember that we are trying to model a binary problem, which is usually a Bernoulli. Thus, the output from neural network should be in class 1 with probability $a^{[2](i)}$. We take log for this Bernoulli and you will get the above with math manipulation. 
+
+We can use gradient ascent for updating. 
 
 ## 3 Backpropagation
+
+We have defined and learned how neural network propagates forwards, which is called prediction stage. Now, we want to know how neural network propagates backwards, which is called learning stage. 
+
+For example, assume that we want to predict if an image contains a ball or not, which is a binary problem. As an image, we have RGB values, which means we deal with a three dimensional matrix. We first flatten it to a one-dimensional vector, and then feed it into the neural network to get the output. It can be illustrated figuratively as below. 
+
+![Example for BP](/images/cs229_deeplearning_bp_1.png)
