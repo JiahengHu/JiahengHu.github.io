@@ -1280,8 +1280,16 @@ where $n^{[\ell]}$ is the number of neurons in layer $\ell$.
 
 ### 3.2 Optimization
 
+In the simple neural network above, we have several parameters to update, namely $W^{[1]},b^{[1]},W^{[2]},b^{[2]},W^{[3]},b^{[3]}$. We can use stochastic gradident descent to optimize. That is, we find the derivative with respect to each variable and take a step of it. Let's look at $W^{[3]}$.
 
-
+$$\begin{align}
+\frac{\partial \mathal{L}}{\partial W^{[3]}} &= -\frac{\partial}{\partial W^{[3]}}\frac{\partial \mathal{L}}{\partial W^{[3]}}\frac{\partial \mathal{L}}{\partial W^{[3]}}\bigg((1-y)\log(1-\hat{y}) + y\log\hat{y}\bigg)\\
+&= -(1-y)\frac{\partial}{\partial W^{[3]}}\log\bigg(1-g(W^{[3]}a^{[2]}+b^{[3]})\bigg) \\
+& - y\frac{\partial}{\partial W^{[3]}}\log\bigg(g(W^{[3]}a^{[2]}+b^{[3]})\bigg) \\
+&= -(1-y)\frac{1}{1-g(W^{[3]}a^{[2]}+b^{[3]})}(-1)g^{\prime}(W^{[3]}a^{[2]}+b^{[3]})a^{[2] T}\\
+& -y\frac{1}{1-g(W^{[3]}a^{[2]}+b^{[3]})}g^{\prime}(W^{[3]}a^{[2]}+b^{[3]})a^{[2] T}\\
+& = (a^{[3]}-y)a^{[2] T}
+\end{align}$$
 
 
 
