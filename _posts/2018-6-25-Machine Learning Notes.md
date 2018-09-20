@@ -291,7 +291,7 @@ $$T(y) = y$$
 
 $$a(\eta) = \mu^2/2 = \eta^2/2$$
 
-b(y) = (1/\sqrt{2\pi})\exp(-y^2/2)$$
+$$b(y) = (1/\sqrt{2\pi})\exp(-y^2/2)$$
 
 Other exponential distribution: Multinomial, Possion, gamma and exponential, beta and Dirichlet. Since they are all in exponential family, what we can do is to study exponential family in general form and vary $\eta$ to model differently. 
 
@@ -704,7 +704,7 @@ We define **Kernel Matrix** as $K_{ij} = K(x^{(i)},x^{(j)})$ for m points(i.e. K
 
 (2)Positive semi-definite: $z^TKz \geq 0$ proof is easy. 
 
-**Mercer Theorem: Let $K:\mathbb{R}^n \times \mathbb{R}^n \mapsto \mathbb{R}$ be given. Then for a Kernel to be valid, it is necessary and sufficient that for any $\{x^{(1)},\dots,x^{(m)\}$, the corresponding kernel matrix is symmetric and postive semi-definite.**
+**Mercer Theorem: Let $K:\mathbb{R}^n \times \mathbb{R}^n \mapsto \mathbb{R}$ be given. Then for a Kernel to be valid, it is necessary and sufficient that for any $\{x^{(1)},\dots,x^{(m)}\}$, the corresponding kernel matrix is symmetric and postive semi-definite.**
 
 Kernel method is not only used in SVM but also anywhere that inner product is used. So we can replace the inner product with Kernel so that we can work in a higher dimensional space. 
 
