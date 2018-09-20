@@ -1224,9 +1224,9 @@ $$Z^{[1]} = \begin{bmatrix} \lvert & \lvert & \lvert\\ z^{[1](1)} & z^{[1](2)} &
 
 Meanwhile, we also (as always) need to define the objective function that we want to maximize. For binary class, we can have the objective function as :
 
-$$\sum\limits_{i=1}^m \big( y^{(i)}\log a^{[2](i)} + (1 - y^{(i)})\log (1 - a^{[2](i)})\big)$$
+$$\sum\limits_{i=1}^m \big( y^{(i)}\log a^{[2] (i)} + (1 - y^{(i)})\log (1 - a^{[2] (i)})\big)$$
 
-where $a^{[2](i)}$ is the output from second layer (also the final layer) for i-th training sample. Remember that we are trying to model a binary problem, which is usually a Bernoulli. Thus, the output from neural network should be in class 1 with probability $a^{[2](i)}$. We take log for this Bernoulli and you will get the above with math manipulation. 
+where $a^{[2] (i)}$ is the output from second layer (also the final layer) for i-th training sample. Remember that we are trying to model a binary problem, which is usually a Bernoulli. Thus, the output from neural network should be in class 1 with probability $a^{[2] (i)}$. We take log for this Bernoulli and you will get the above with math manipulation. 
 
 We can use gradient ascent for updating. 
 
