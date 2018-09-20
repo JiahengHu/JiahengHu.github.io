@@ -1033,7 +1033,7 @@ In this scenario, **hold-out cross validation** will do a better work as:
 
 2 Train each $M_i$ on $S_{tr}$ to get hypothesis $h_i$
 
-3 Select the hypothesis which has the smallest epirical error on the $S_{cv}$, which denotes $\hat{\varepsilon}_{S_{cv}}(h_i)$
+3 Select the hypothesis which has the smallest epirical error on the $S_{cv}$, which denotes $\hat{\varepsilon}\_{S_{cv}}(h_i)$
 
 By doing the above, we try to estimate the real generalization error by testing the model on validation set. In step 3, after selecting the best model, we can retrain the model on the entire dataset again to generate the best hypothesis. However, even though that's the case, we still select the model based on 70% dataset. This is bad when data is scarce. 
 
