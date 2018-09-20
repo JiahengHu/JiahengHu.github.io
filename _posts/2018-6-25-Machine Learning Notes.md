@@ -1283,7 +1283,7 @@ where $n^{[\ell]}$ is the number of neurons in layer $\ell$.
 In the simple neural network above, we have several parameters to update, namely $W^{[1]},b^{[1]},W^{[2]},b^{[2]},W^{[3]},b^{[3]}$. We can use stochastic gradident descent to optimize. That is, we find the derivative with respect to each variable and take a step of it. Let's look at $W^{[3]}$.
 
 $$\begin{align}
-\frac{\partial \mathal{L}}{\partial W^{[3]}} &= -\frac{\partial}{\partial W^{[3]}}\frac{\partial \mathal{L}}{\partial W^{[3]}}\frac{\partial \mathal{L}}{\partial W^{[3]}}\bigg((1-y)\log(1-\hat{y}) + y\log\hat{y}\bigg)\\
+\frac{\partial \mathcal{L}}{\partial W^{[3]}} &= -\frac{\partial}{\partial W^{[3]}}\frac{\partial \mathcal{L}}{\partial W^{[3]}}\frac{\partial \mathcal{L}}{\partial W^{[3]}}\bigg((1-y)\log(1-\hat{y}) + y\log\hat{y}\bigg)\\
 &= -(1-y)\frac{\partial}{\partial W^{[3]}}\log\bigg(1-g(W^{[3]}a^{[2]}+b^{[3]})\bigg) \\
 & - y\frac{\partial}{\partial W^{[3]}}\log\bigg(g(W^{[3]}a^{[2]}+b^{[3]})\bigg) \\
 &= -(1-y)\frac{1}{1-g(W^{[3]}a^{[2]}+b^{[3]})}(-1)g^{\prime}(W^{[3]}a^{[2]}+b^{[3]})a^{[2] T}\\
@@ -1291,6 +1291,17 @@ $$\begin{align}
 & = (a^{[3]}-y)a^{[2] T}
 \end{align}$$
 
+where g is sigmoid function. 
 
+In order to compute the gradient for $W^{[2]}$, we have to use chain rule from calculus, which will give us as:
 
+$$\frac{\partial \mathcal{L}}{\partial W^{[2]}} = \frac{\partial \mathcal{L}}{\partial a^{[3]}}\frac{\partial a^{[3]}}{\partial z^{[3]}}\frac{\partial z^{[3]}}{\partial a^{[2]}}\frac{\partial a^{[2]}}{\partial z^{[2]}}\frac{\partial z^{[2]}}{\partial W^{[2]}}$$
+
+Note that each fraction shows the dependence between numerator and denominator. 
+
+Now, we can plug in each one:
+
+$$\frac{\partial \mathcal{L}}{\partial W^{[2]}} = \underbrace{\frac{\partial \mathcal{L}}{\partial a^{[3]}}\frac{\partial a^{[3]}}{\partial z^{[3]}}}\_{a^{[3]}- y}\underbrace{\frac{\partial z^{[3]}}{\partial a^{[2]}}}\_{W^{[3]}}\underbrace{\frac{\partial a^{[2]}}{\partial z^{[2]}}}\_{g^{\prime}(z^{[2]})}\underbrace{\frac{\partial z^{[2]}}{\partial W^{[2]}}}\_{a^{[1]}}$$
+
+We still need to match up the shape. 
 
