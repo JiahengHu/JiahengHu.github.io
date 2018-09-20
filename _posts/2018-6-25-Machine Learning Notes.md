@@ -1237,3 +1237,19 @@ We have defined and learned how neural network propagates forwards, which is cal
 For example, assume that we want to predict if an image contains a ball or not, which is a binary problem. As an image, we have RGB values, which means we deal with a three dimensional matrix. We first flatten it to a one-dimensional vector, and then feed it into the neural network to get the output. It can be illustrated figuratively as below. 
 
 ![Example for BP](/images/cs229_deeplearning_bp_1.png)
+
+So next, let's talk about how to update its parameters. 
+
+### 3.1 Parameter Initialization
+
+Keep in mind that the input is flattened although it is image. With two layers of neural network, we can draw it as:
+
+![Example for BP](/images/cs229_deeplearning_bp_2.png)
+
+Note how each node in each layer is connected. This is called fully connected. We can now use the method discussed in last section to figure out what output willl be for each node in each layer by using matrix notation. In addition, with matrix notation, we can calculate the number of parameters that we are trying to update. I would not repeat the calculation step but the answer is $3n+14$.
+
+Before updating, we need to initialize these parameters. We CANNOT initialize them to zero since this will cause the output of first layer to be zero and further problem when we update them (gradient will be same). The workaround is to initialize them by unit Gaussian. 
+
+After initialization and one single input, we then have the prediction $\hat{y}$. We can use this value to back-propagate so that network can learn from it. If $\hat{y} = y$, then we can nothing to learn. The network does well. However, if not, we have something to ask for network to update its parameters so that it can do better next time. Is it like a human, isn't?
+
+
