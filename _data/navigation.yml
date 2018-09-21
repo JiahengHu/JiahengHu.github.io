@@ -10,6 +10,8 @@ main:
     url: https://wei2624.github.io/categories/
   - title: "Tags"
     url: https://wei2624.github.io/tags/
+  - title: "Sitemap"
+    url: /sitemap/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
