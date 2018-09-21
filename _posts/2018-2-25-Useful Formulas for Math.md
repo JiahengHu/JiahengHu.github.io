@@ -91,7 +91,7 @@ Proof can be found on Wiki easily.
 
 ## Vector Calculus
 
-### Gradient
+### Gradient - Vector in, Scalar out
 
 Let's denote a function $f:\mathbb{R}^n\mapsto\mathbb{R}$. The gradient of the function is defined as:
 
@@ -101,7 +101,7 @@ It simply says that for a function which takes a vector as input and a scaler as
 
 For example, $y = x^Tz$ where $x \in \mathbb{R}^n$ should be a good practice to work on. 
 
-### Jacobian Matrix
+### Jacobian Matrix - Vector in, Vector out
 
 For Jacobian, the case is more complicated. Let's denote a function $f:\mathbb{R}^n\mapsto\mathbb{R}^m$. The Jacobian of the function is defined as:
 
@@ -111,9 +111,23 @@ It says that if we have a function which takes a vector as input and putput a ve
 
 For example, $f(x,y) = (x^2 + y, y^3)$ should a good one to try. 
 
-### Hessian Matrix
+### Generalized Jacobian Matrix - Tensor in, Tensor out
 
-Whereas gradient and Jacobian are somewhat like a first order derivative, Hessian is somewhat for second order partial derivative. Let's denote a function $f:\mathbb{R}^n\mapsto\mathbb{R}$. The Hessian of the function is defined as:
+In previous Jacobian matrix, we assume the input is an vector and output is an vector too. However, we can generalize this to a tensor to form **generalized Jacobian matrix**. 
+
+Suppose that $f:\mathcal{R}^{N_1\times \dots\times N_{D_x}}\mapsto\mathcal{R}^{N_1\times \dots\times N_{D_y}}$. It means the input to f is a $D_x$-dimensional tensor of shape $N_1\times \dots\times N_{D_x}$ and the output of f is a $D_y$-dimensional tensor of shape $N_1\times \dots\times N_{D_y}$. Thus, **the generalized Jacobian matrix has the shape of $(N_1\times \dots\times N_{D_y})\times(N_1\times \dots\times N_{D_x})$**. 
+
+You can image this generalized Jacobian matrix as a "2D" matrix where the row dimension is indexed by $N_1\times \dots\times N_{D_y}$ and the column dimension is indexed by $N_1\times \dots\times N_{D_x}$. 
+
+Now, given that $i\in\mathcal{Z}^{D_y}$ and $j\in\mathcal{Z}^{D_x}$ We can have:
+
+$$\bigg(\frac{\partial y}{\partial x}\bigg)\_{i,j} = \frac{\partial y_i}{\partial x_j}$$ 
+
+So we know that $y_i$ and $x_j$ are all scalars. Thus, $\frac{\partial y_i}{\partial x_j}$ is also a scalar. This tells us the relative rates of change between all elements of x and all elements in y. 
+
+### Hessian Matrix - Vector in, Scalar out
+
+Whereas gradient and Jacobian are somewhat like a first order derivative, Hessian is somewhat like second order partial derivative. Let's denote a function $f:\mathbb{R}^n\mapsto\mathbb{R}$. The Hessian of the function is defined as:
 
 $$H_x(f) = \begin{bmatrix} \frac{\partial^2 f}{\partial x_1^2} & \frac{\partial^2 f}{\partial x_1 \partial x_2} & \dots & \frac{\partial^2 f}{\partial x_1 \partial x_n}\\ \frac{\partial^2 f}{\partial x_2 \partial x_1} & \frac{\partial^2 f}{\partial x_2^2} & \dots & \frac{\partial^2 f}{\partial x_2 \partial x_n} \\ \vdots & \vdots & \dots &\vdots \\ \frac{\partial^2 f}{\partial x_n \partial x_1} & \frac{\partial^2 f}{\partial x_b \partial x_2} & \dots & \frac{\partial^2 f}{\partial x_n^2} \end{bmatrix}$$
 
