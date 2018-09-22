@@ -1307,7 +1307,7 @@ Traditionally, we need to use generalized Jacobian matrix for this calculation. 
 
 I do suggest to take a look at [this post](http://cs231n.stanford.edu/handouts/derivatives.pdf) and [this post](http://cs231n.stanford.edu/handouts/linear-backprop.pdf) for detailed explanation. Here, I just keep it simple to get:
 
-$$\frac{\partial \mathcal{L}}{\partial W^{[2]}} = \underbrace{a^{[3]}- y}_{1\times 1}\underbrace{W^{[3]^T}_{2\times 1}}\odot\underbrace{g^{\prime}(z^{[2]})}_{2\times 1}\underbrace{a^{[1]}}\_{1\times}$$
+$$\frac{\partial \mathcal{L}}{\partial W^{[2]}} = \underbrace{(a^{[3]}- y)}_{1\times 1}\underbrace{W^{[3]^T}}_{2\times 1}\odot\underbrace{g^{\prime}(z^{[2]})}_{2\times 1}\underbrace{a^{[1]}}_{1\times 3}$$
 
 where $\odot$ denotes element-wise product. What happens here, in short, is that the first term is scalar but $W^{[3]^T}\odot g^{\prime}(z^{[2]})$ this part is originally a generalized Jacobian matrix multiplication. However, since the activition function is per element, the generalized Jacobian matrix for $\frac{\partial a^{[2]}}{\partial z^{[2]}}$ is a 2 by 2 diagnoal matrix. And $\frac{\partial z^{[3]}}{\partial a^{[2]}}$ is actually a 1 by 2 vector. The matrix multiplication of the two can be calculated in another way which is element-wise product. 
 
