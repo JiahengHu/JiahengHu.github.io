@@ -1301,7 +1301,7 @@ Note that each fraction shows the dependence between numerator and denominator.
 
 Now, we can plug in each one:
 
-$$\frac{\partial \mathcal{L}}{\partial W^{[2]}} = \underbrace{\frac{\partial \mathcal{L}}{\partial a^{[3]}}\frac{\partial a^{[3]}}{\partial z^{[3]}}}\_{a^{[3]}- y}\underbrace{\frac{\partial z^{[3]}}{\partial a^{[2]}}}\_{W^{[3]}}\underbrace{\frac{\partial a^{[2]}}{\partial z^{[2]}}}\_{g^{\prime}(z^{[2]})}\underbrace{\frac{\partial z^{[2]}}{\partial W^{[2]}}}\_{a^{[1]}}$$
+$$\frac{\partial \mathcal{L}}{\partial W^{[2]}} = \underbrace{\frac{\partial \mathcal{L}}{\partial a^{[3]}}\frac{\partial a^{[3]}}{\partial z^{[3]}}}_{a^{[3]} - y}\underbrace{\frac{\partial z^{[3]}}{\partial a^{[2]}}}_{W^{[3]}}\underbrace{\frac{\partial a^{[2]}}{\partial z^{[2]}}}_{g^{\prime}(z^{[2]})}\underbrace{\frac{\partial z^{[2]}}{\partial W^{[2]}}}_{a^{[1]}}$$
 
 Traditionally, we need to use generalized Jacobian matrix for this calculation. If you are not familiar with this, you can check [my post on math](https://wei2624.github.io/math/Useful-Formulas-for-Math/). However, we won't do this here since generalized Jacobian matrix calculation will require a lot of memory. We have to work around it. 
 
@@ -1309,7 +1309,7 @@ I do suggest to take a look at [this post](http://cs231n.stanford.edu/handouts/d
 
 $$\frac{\partial \mathcal{L}}{\partial W^{[2]}} = \underbrace{a^{[3]}- y}\_{1\times 1}\underbrace{W^{[3]^T}\_{2\times 1}}\odot\underbrace{g^{\prime}(z^{[2]})}\_{2\times 1}\underbrace{a^{[1]}}\_{1\times}$$
 
-where $\odot$ denotes element-wise product. What happens here, in short, is that the first term is scalar but $\underbrace{W^{[3]^T}\_{2\times 1}}\odot\underbrace{g^{\prime}(z^{[2]})}\_{2\times 1}$ this part is originally a generalized Jacobian matrix multiplication. However, since the activition function is per element, the generalized Jacobian matrix for $\frac{\partial a^{[2]}}{\partial z^{[2]}}$ is a 2 by 2 diagnoal matrix. And $\frac{\partial z^{[3]}}{\partial a^{[2]}}$ is actually a 1 by 2 vector. The matrix multiplication of the two can be calculated in another way which is element-wise product. 
+where $\odot$ denotes element-wise product. What happens here, in short, is that the first term is scalar but $W^{[3]^T}\_{2\times 1}\odot g^{\prime}(z^{[2]})$ this part is originally a generalized Jacobian matrix multiplication. However, since the activition function is per element, the generalized Jacobian matrix for $\frac{\partial a^{[2]}}{\partial z^{[2]}}$ is a 2 by 2 diagnoal matrix. And $\frac{\partial z^{[3]}}{\partial a^{[2]}}$ is actually a 1 by 2 vector. The matrix multiplication of the two can be calculated in another way which is element-wise product. 
 
 For the last term, the reason that it is not a generalized Jacobian is that we can work around it by just getting the matrix as a result. More details can be found the linked posts above. 
 
