@@ -1303,5 +1303,28 @@ Now, we can plug in each one:
 
 $$\frac{\partial \mathcal{L}}{\partial W^{[2]}} = \underbrace{\frac{\partial \mathcal{L}}{\partial a^{[3]}}\frac{\partial a^{[3]}}{\partial z^{[3]}}}\_{a^{[3]}- y}\underbrace{\frac{\partial z^{[3]}}{\partial a^{[2]}}}\_{W^{[3]}}\underbrace{\frac{\partial a^{[2]}}{\partial z^{[2]}}}\_{g^{\prime}(z^{[2]})}\underbrace{\frac{\partial z^{[2]}}{\partial W^{[2]}}}\_{a^{[1]}}$$
 
-We still need to match up the shape. 
+Traditionally, we need to use generalized Jacobian matrix for this calculation. If you are not familiar with this, you can check [my post on math](https://wei2624.github.io/math/Useful-Formulas-for-Math/). However, we won't do this here since generalized Jacobian matrix calculation will require a lot of memory. We have to work around it. 
+
+I do suggest to take a look at [this post](http://cs231n.stanford.edu/handouts/derivatives.pdf) and [this post](http://cs231n.stanford.edu/handouts/linear-backprop.pdf) for detailed explanation. Here, I just keep it simple to get:
+
+$$\frac{\partial \mathcal{L}}{\partial W^{[2]}} = \underbrace{a^{[3]}- y}\_{1\times 1}\underbrace{W^{[3]^T}\_{2\times 1}}\odot\underbrace{g^{\prime}(z^{[2]})}\_{2\times 1}\underbrace{a^{[1]}}\_{1\times}$$
+
+where $\odot$ denotes element-wise product. What happens here, in short, is that the first term is scalar but $\underbrace{W^{[3]^T}\_{2\times 1}}\odot\underbrace{g^{\prime}(z^{[2]})}\_{2\times 1}$ this part is originally a generalized Jacobian matrix multiplication. However, since the activition function is per element, the generalized Jacobian matrix for $\frac{\partial a^{[2]}}{\partial z^{[2]}}$ is a 2 by 2 diagnoal matrix. And $\frac{\partial z^{[3]}}{\partial a^{[2]}}$ is actually a 1 by 2 vector. The matrix multiplication of the two can be calculated in another way which is element-wise product. 
+
+For the last term, the reason that it is not a generalized Jacobian is that we can work around it by just getting the matrix as a result. More details can be found the linked posts above. 
+
+Now, we can use the gradient descent for updating:
+
+$$W^{[\ell]} = W^{[\ell]} - \alpha\frac{J}{W^{[\ell]}}$$
+
+where J is the cost function defined as $J=\frac{1}{m}\sum\limits_{i=1}^m\mathcal{L}^i$. 
+
+Another popular optimization algorithm is called **momentum**. The update rule is:
+
+$$\begin{cases} v_{dW^{[\ell]}} = \beta dW^{[\ell]} + (1-\beta)\frac{\partial J}{dW^{[\ell]}} \\ W^{[\ell]}  = W^{[\ell]} - \alpha v_{dW^{[\ell]}}\\ \end{cases}$$
+
+This rule happens in two stages. The first one is to get the speed and the second is to use the speed to update it. This algorithm basically keeps track of all the past gradient and will help escape from saddle point. 
+
+### 3.3 Analyzing the Parameters
+
 
