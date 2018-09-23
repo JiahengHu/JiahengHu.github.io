@@ -14,3 +14,28 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+
+
+MachineLearning:
+  - title: Supervised Learning
+    children:
+      - title: "Discriminative Algorithm"
+        url: /_posts/MachineLearning/sv_discriminative_model.md
+      - title: "Generative Algorithm"
+        url: /_posts/MachineLearning/sv_generative_model.md
+      - title: "Support Vector Machine"
+        url: "/_posts/MachineLearning/sv_svm.md"
+      - title: "Bias and Variance Tradeoff"
+        url: /_posts/MachineLearning/sv_bias_variance_tradeoff.md
+      - title: "Learning Theory"
+        url: /_posts/MachineLearning/sv_learning_theory.md
+      - title: "Regularization and Model Selection"
+        url: /_posts/MachineLearning/sv_regularization_model_selection.md
+      - title: "Online Learning and Perceptron"
+        url: /_posts/MachineLearning/sv_online_learning_perceptron.md
+  - title: Deep Learning
+    children: 
+      - title: "Neural Networks"
+        url: /_posts/MachineLearning/dl_neural_network.md
+      - title: "Backpropagation"
+        url: /_posts/MachineLearning/dl_backpropagtion.md
