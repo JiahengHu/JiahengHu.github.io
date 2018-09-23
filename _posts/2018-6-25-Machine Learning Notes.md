@@ -1327,4 +1327,40 @@ This rule happens in two stages. The first one is to get the speed and the secon
 
 ### 3.3 Analyzing the Parameters
 
+We have done all the components in the training process. If we have trained model which performs 94% on training dataset but only 60% in testing dataset, then there is an overfitting. The possible solutions are: collecting more data, employing regularization or making the model simpler/shallower. In this section, I am going to talk about regularization. 
+
+#### L2 Regularization
+
+Let W donote all the parameters in the model. The L2 regularization adds another term to the cost function, which is called reluarizer:
+
+$$\begin{align}
+J_{new} &= J_{old} + \frac{\lambda}{2}\lvert\lvert W \rvert\rvert^2 \\
+&=J_{old} + \frac{\lambda}{2}\sum\limits_{i,j}\lvert W_{ij}\rvert^2\\
+&=J_{old} + \frac{\lambda}{2}W^TW
+\end{align}$$
+
+where $\lambda$ is an arbitrary value. If it is large, it means a parge penalty and large regularization. Then, the update rule has also changed to:
+
+$$\begin{align}
+W &= W - \alpha\frac{\partial J}{\partial W} - \alpha\frac{\lambda}{2}\frac{\partial W^TW}{\partial W}\\
+&= (1-\alpha\lambda)W - \alpha\frac{\partial J}{\partial W}
+\end{align}$$
+
+This means that in updating, some penalties might be included in order to optimize the new J overall. Note that this penalty encourages parameters to be small in l2 magnitude. This is becuase larger magnitude of parameters results in larger varaince. 
+
+### Parameter Sharing
+
+Recall that logistic regression train each parameter for each pixel. However, for ball detection task, if the ball always appears in the center pixels in the training dataset, this might be a problem if a ball appears in a cornor in testing phase. This is because the wieghts on the cornor have never been trained with a ball in there so that the weights do not have that concepts in them. 
+
+To solve this, we have a new type of network structure called **comvolutional neural networks**. Instead of a vector of parameters, we use a matrix of vector, say size of 4 by 4. We take this matrix and slide it over the image. This can be shown below.
+
+![Example for CNN](/images/cs229_deeplearning_cnn_1.png)
+
+This matrix of parameters will take inner product with corresponding pixels in the image, which is a scalar. Then we slide matrix to the right and the bottom, which can be shown as:
+
+![Example for CNN](/images/cs229_deeplearning_cnn_2.png)
+
+Note that each matrix share the same weighs across the entire image. 
+
+
 
