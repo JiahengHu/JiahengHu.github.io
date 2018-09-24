@@ -3,6 +3,8 @@ layout: single
 mathjax: true
 toc: true
 toc_sticky: true
+category: Machine Learning
+tags: [notes]
 qr: machine_learning_notes.png
 title: Discriminative Algorithm
 permalink: /_posts/MachineLearning/sv_discriminative_model/
