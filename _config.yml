@@ -145,7 +145,7 @@ footer:
 include:
   - .htaccess
   - _pages
-  - _posts/MachineLearning
+  - _posts/MachineLearning/
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
