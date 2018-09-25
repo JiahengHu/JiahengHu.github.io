@@ -4,7 +4,7 @@
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
 # theme                  : "minimal-mistakes-jekyll"
-remote_theme           : "mmistakes/minimal-mistakes"
+remote_theme             : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
@@ -171,8 +171,6 @@ exclude:
   - Rakefile
   - README
   - tmp
-  - /docs # ignore Minimal Mistakes /docs
-  - /test # ignore Minimal Mistakes /test
 keep_files:
   - .git
   - .svn
@@ -281,3 +279,15 @@ defaults:
       comments: # true
       share: true
       related: true
+  # _MachineLearning
+  - scope:
+      path: ""
+      type: MachineLearning
+    values:
+      layout: single
+      read_time: false
+      author_profile: false
+      share: true
+      comments: true
+      sidebar:
+        nav: "MachineLearning"

@@ -22,20 +22,20 @@ MachineLearning:
       - title: "Discriminative Algorithm"
         url: /MachineLearning/sv_discriminative_model/
       - title: "Generative Algorithm"
-        url: /_posts/MachineLearning/sv_generative_model/
+        url: /MachineLearning/sv_generative_model/
       - title: "Support Vector Machine"
-        url: /_posts/MachineLearning/sv_svm/
+        url: /MachineLearning/sv_svm/
       - title: "Bias and Variance Tradeoff"
-        url: /_posts/MachineLearning/sv_bias_variance_tradeoff/
+        url: /MachineLearning/sv_bias_variance_tradeoff/
       - title: "Learning Theory"
-        url: /_posts/MachineLearning/sv_learning_theory/
+        url: /MachineLearning/sv_learning_theory/
       - title: "Regularization and Model Selection"
-        url: /_posts/MachineLearning/sv_regularization_model_selection/
+        url: /MachineLearning/sv_regularization_model_selection/
       - title: "Online Learning and Perceptron"
-        url: /_posts/MachineLearning/sv_online_learning_perceptron/
+        url: /MachineLearning/sv_online_learning_perceptron/
   - title: Deep Learning
     children: 
       - title: "Neural Networks"
-        url: /_posts/MachineLearning/dl_neural_network/
+        url: /MachineLearning/dl_neural_network/
       - title: "Backpropagation"
-        url: /_posts/MachineLearning/dl_backpropagtion/
+        url: /MachineLearning/dl_backpropagtion/
