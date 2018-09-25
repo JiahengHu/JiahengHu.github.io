@@ -20,7 +20,7 @@ MachineLearning:
   - title: Supervised Learning
     children:
       - title: "Discriminative Algorithm"
-        url: https://wei2624.github.io/MachineLearning/sv_discriminative_model/
+        url: /MachineLearning/sv_discriminative_model/
       - title: "Generative Algorithm"
         url: /_posts/MachineLearning/sv_generative_model/
       - title: "Support Vector Machine"
