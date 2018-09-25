@@ -7,7 +7,10 @@ category: Machine Learning
 tags: [notes]
 qr: machine_learning_notes.png
 title: Discriminative Algorithm
+share: true
 permalink: /MachineLearning/sv_discriminative_model/
+sidebar:
+  nav: "MachineLearning"
 ---
 
 A classical learning problem is called supervised learning. In this case, we usually have an input called features and output called target. The goal is that given some features we ask the trained model to predict the output. To do so, we collect a training dataset in which we have a number of pairs of training sample composing of a feature vector and its corresponding output. Since we have ground truth for every single input, we call this type of learning as supervised learning and the learned model as hypothesis. An example can be shown in the table below. 
