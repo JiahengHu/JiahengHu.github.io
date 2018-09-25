@@ -13,7 +13,7 @@ sidebar:
   nav: "MachineLearning"
 ---
 
-## 1 Nerual Networks
+# 1 Nerual Networks
 
 Recall that in the housing price prediction example. We take the size of the house as input and make predictions on price by fitting a straight line. The problem in this model is that a straight line has mathematical meaning in negative domain, which does not make sense in predicting house values. Thus, we need to perform some link function to get a plot like the one below. 
 
@@ -59,13 +59,13 @@ $$a^{[1]} = \begin{bmatrix} a_1^{[1]}\\ a_2^{[1]} \\ a_3^{[1]}  \\ a_4^{[1]} \en
 
 For some of tasks, we might not want to use ReLU although it is really popular in research simply becuase it is not always correct that we should have non-negative value for prediction. 
 
-## 2 Vectorization
+# 2 Vectorization
 
 Now, a natural question to ask is that what the activation does and what if I remove it. Intuitively, activition functions are the key part of making deep learning work and making it possible to model non-linear relationships. Without it, what neural network does simply becomes linear combinations between weights and its input. Let's see how mathematically we can prove this. 
 
 In the previous section, we calculate each $z_i^{[1]}$ and apply activation function for each of them. We can put all of them into a matrix and take advantage of matrix calculations to speed up this process. 
 
-### 2.1 Vectorizaing the Output Computation
+## 2.1 Vectorizaing the Output Computation
 
 So for the first layer, we can have:
 
@@ -73,7 +73,7 @@ $$\underbrace{\begin{bmatrix} z_1^{[1]}\\ z_2^{[1]} \\ z_3^{[1]}  \\ z_4^{[1]} \
 
 The dimenion of each matrix is labelled below. In short, it is $z^{[1]} = W^{[1]}x + b^{[1]}$, which is linear relationship. Then, we can apply activition function on z vector like sigmoid function for example. Similarly, we can use matrix to represent the propagation from first layer to secon layer. **As you can see here, without non-linear activition function, we simply do linear regression here, which cannot model many complicated non-linear relationship.**
 
-### 2.2 Vectorization over Training Examples
+## 2.2 Vectorization over Training Examples
 
 Now, we want to do this thing for all the training samples that going to be fed into neural network. We want to do it at one time. So we define a sample matrix:
 
@@ -91,7 +91,7 @@ where $a^{[2] (i)}$ is the output from second layer (also the final layer) for i
 
 We can use gradient ascent for updating. 
 
-## 3 Backpropagation
+# 3 Backpropagation
 
 We have defined and learned how neural network propagates forwards, which is called prediction stage. Now, we want to know how neural network propagates backwards, which is called learning stage. 
 
@@ -101,7 +101,7 @@ For example, assume that we want to predict if an image contains a ball or not, 
 
 So next, let's talk about how to update its parameters. 
 
-### 3.1 Parameter Initialization
+## 3.1 Parameter Initialization
 
 Keep in mind that the input is flattened although it is image. With two layers of neural network, we can draw it as:
 
@@ -139,7 +139,7 @@ $$w^{[\ell]} \sim \mathcal{N}(0,\sqrt{\frac{2}{n^{[\ell]} + n^{[\ell-1]}}})$$
 
 where $n^{[\ell]}$ is the number of neurons in layer $\ell$. 
 
-### 3.2 Optimization
+## 3.2 Optimization
 
 In the simple neural network above, we have several parameters to update, namely $W^{[1]},b^{[1]},W^{[2]},b^{[2]},W^{[3]},b^{[3]}$. We can use stochastic gradident descent to optimize. That is, we find the derivative with respect to each variable and take a step of it. Let's look at $W^{[3]}$.
 
@@ -186,11 +186,11 @@ $$\begin{cases} v_{dW^{[\ell]}} = \beta dW^{[\ell]} + (1-\beta)\frac{\partial J}
 
 This rule happens in two stages. The first one is to get the speed and the second is to use the speed to update it. This algorithm basically keeps track of all the past gradient and will help escape from saddle point. 
 
-### 3.3 Analyzing the Parameters
+## 3.3 Analyzing the Parameters
 
 We have done all the components in the training process. If we have trained model which performs 94% on training dataset but only 60% in testing dataset, then there is an overfitting. The possible solutions are: collecting more data, employing regularization or making the model simpler/shallower. In this section, I am going to talk about regularization. 
 
-#### L2 Regularization
+### L2 Regularization
 
 Let W donote all the parameters in the model. The L2 regularization adds another term to the cost function, which is called reluarizer:
 
@@ -209,7 +209,7 @@ W &= W - \alpha\frac{\partial J}{\partial W} - \alpha\frac{\lambda}{2}\frac{\par
 
 This means that in updating, some penalties might be included in order to optimize the new J overall. Note that this penalty encourages parameters to be small in l2 magnitude. This is becuase larger magnitude of parameters results in larger varaince. 
 
-### Parameter Sharing
+## Parameter Sharing
 
 Recall that logistic regression train each parameter for each pixel. However, for ball detection task, if the ball always appears in the center pixels in the training dataset, this might be a problem if a ball appears in a cornor in testing phase. This is because the wieghts on the cornor have never been trained with a ball in there so that the weights do not have that concepts in them. 
 

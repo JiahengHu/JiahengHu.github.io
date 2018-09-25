@@ -13,11 +13,10 @@ sidebar:
   nav: "MachineLearning"
 ---
 
-# Regularization and Model Selection
 
 In model selection, if we have k parameters in the model, the quesiton is what k should be?0,1,or 10?Which does one of them give the best bias-varaince tradeoff. In particular, we use a finite set of models $\mathcal{M} = \{M_1,M_2,\dots,M_d\}$ from which we try to select the best. Each model in the set contains either different parameterization of a particular model or different models. 
 
-## 1 Cross Validation
+# 1 Cross Validation
 
 Imagine that given a dataset S and a set of models, it is easy to think to select a model out of the set by:
 
@@ -47,7 +46,7 @@ Thus, we introduce the K-fold corss validation as:
 
 A typical choice for k is 10. This is computationally expensive although it gives the best performance. If the data is scarce, we might set k=m. In this case, we leave one sample at a time. We call it **leave-ont-out cross validation**. 
 
-## 2 Feature Selection
+# 2 Feature Selection
 
 If we have n features and m samples where $n \gg m$ (VC dimension is O(n)), we might have overfitting. In this case, you might want to select some of features which might be the most important. In brute force algorithm, we can have $2^n$ different combinations of feature setting. We can perform model selection over all $2^n$ possible models. This is too expensive to deal with. Thus, we have an option called **forward search** algorithm:
 
@@ -71,7 +70,7 @@ $$MI(x_i,y) = KL(p(x_i,y)\lvert\lvert p(x_i)p(y))$$
 
 where KL is **Kullback-Leibler divergence**. It simply measures how different the probability distributions from both sides of the two bars are. If $x_i$ and $y$ are independent, then KL is 0. That means there is no relationship between this feature and labels. In contrast, if we have a high score of MI, then such a feature is strongly correlated with labels. 
 
-## 3 Bayesian Statistics and regularization
+# 3 Bayesian Statistics and regularization
 
 In the previous sectiosn, we talk about the maximum likelihood (ML) algorithm to fit model parameters as:
 

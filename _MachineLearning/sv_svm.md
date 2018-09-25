@@ -13,9 +13,7 @@ sidebar:
   nav: "MachineLearning"
 ---
 
-# Lecture 3 Support Vector Machine (SVM)
-
-## 1 Intuition Notation
+# 1 Intuition Notation
 
 ![SVM Intuition](/images/svm_intuition.png)
 
@@ -27,7 +25,7 @@ $$h_{w,b}(x) = g(w^Tx + b)$$
 
 Note, we have w, b instead $\theta$ here. And the label only takes the value 1 and -1 instead of 0 and 1. The classifier predicts directly as 1 or -1 like **perceptron algorithm** without calculating the probability like what logistic did. **However, this does not mean SVM cannot output its corresponding probability.**
 
-## 2 Functional and Geometric Margins
+# 2 Functional and Geometric Margins
 
 **functional margine** with respect to training example:
 
@@ -61,7 +59,7 @@ If $\lvert\lvert w \rvert\rvert = 1$, the functional margin is equal to geometri
 
 $$\gamma = \min_{i=1,\dots,m}\gamma^{(i)}$$
 
-## 3 Optimal Margin Classifier
+# 3 Optimal Margin Classifier
 
 The goal is to maximize the geometric margin.
 
@@ -91,7 +89,7 @@ $$ \text{s.t. } y^{(i)}(w^Tx^{(i)} + b) \geq 1, i = 1,\dots,m$$
 
 The problem can be solved by using quadratic programming software. We can still go further to simplify this but it requires the knowledge of **Lagrange Duality**
 
-## 4 Lagrange Duality
+# 4 Lagrange Duality
 
 Let's take a side step on how to solve general **constrained optimizing problem.** 
 
@@ -166,7 +164,7 @@ $$\alpha_i^{\ast} \geq 0,i = 1,\dots,k$$
 
 Third euqaiton is called **KKT dual complementarity condition**. It means if $\alpha_i^{\ast} > 0$, then $g_i(w^{\ast}) = 0$.
 
-## 5 Optimal Margin Classifier
+# 5 Optimal Margin Classifier
 
 Let's revisit the primal problem:
 
@@ -223,7 +221,7 @@ $$w^Tx + b = (\sum\limits_{i=1}^m \alpha_i y^{(i)} x^{(i)})^Tx + b = \sum\limits
 If it is bigger than zero, we predict one. We also know that $\alpha$ will be all zeros except for the support vectors. That means **we only cares about the inner product between x and support vector**. This makes the prediction faster and brings the **Kernel funciton** into the sight, which is for high dimensional space. 
 
 
-## 6 Kernels
+# 6 Kernels
 
 In the example of living area of house, we can use the feature $x.x^2,x^3$ to get cubic function. X is called **input attribute** and $x.x^2,x^3$ is called **features**. We dentoe $\phi (x)$ the feature mapping from attribute to features. 
 
@@ -255,7 +253,7 @@ We define **Kernel Matrix** as $K_{ij} = K(x^{(i)},x^{(j)})$ for m points(i.e. K
 
 Kernel method is not only used in SVM but also anywhere that inner product is used. So we can replace the inner product with Kernel so that we can work in a higher dimensional space. 
 
-## 7 Regularization and Non-separable Case
+# 7 Regularization and Non-separable Case
 
 Although mapping x to higher dimensional space increases the chance to be separable, it might not be case. An outlier could also be the cause that we actually don't want to include. An example of such a case can be shown below. 
 
@@ -291,11 +289,11 @@ Notice that we have an interval for $\alpha$ becuase it has $\sum\limits_{i=1}^{
 
 Also notice that the optimal b is not the same anymore because the margin for both cloest points have changed. In next section, we will find the algrotihm to figure out the solution. 
 
-## 8 The SMO Algorithm
+# 8 The SMO Algorithm
 
 The SMO(sequential minimal optimization) algorithm by John Platt is to solve the dual problem in SVM. 
 
-### 8.1 Coordinate Ascent
+## 8.1 Coordinate Ascent
 
 In general, the optimization problem
 
@@ -315,7 +313,7 @@ Basically, we fix all the $\alpha$ except for $\alpha_i$ and then move to next $
 
 Note that the path of the convergence is always parallel to axis because it is updated one variable at a time. 
 
-### 8.2 SMO
+## 8.2 SMO
 
 We cannot do the same thing in dual problem in SVM because varying only one variable might violate the constraint:
 

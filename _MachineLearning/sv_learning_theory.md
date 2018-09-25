@@ -13,9 +13,7 @@ sidebar:
   nav: "MachineLearning"
 ---
 
-# Learning Theory
-
-## 1 Bias-Varaince tradeoff
+# 1 Bias-Varaince tradeoff
 
 This has already been discussed in last section. In additon, we should emphasize that:
 
@@ -25,7 +23,7 @@ This has already been discussed in last section. In additon, we should emphasize
 
 There is a tradeoff in between. 
 
-## 2 Preliminaries
+# 2 Preliminaries
 
 The key idea is to formalize the analysis on a machine learning algorithm. For example, is there a bound on generalization error? Is there condition on that limit? How can we select a model over others? This is what learning theory talks about. 
 
@@ -64,7 +62,7 @@ In learning theory, we do not want to restrict the hypothesis to a linear classi
 $$\hat{h} = \arg\min_{h\in\mathcal{H}}\hat(\varepsilon)(h)$$
 
 
-## 3 The Case of Finite $\mathcal{H}$
+# 3 The Case of Finite $\mathcal{H}$
 
 To begin with, we first consider the case where the number of hypothesis classes is finite, dentoed $\mathcal{H} = \{h_1,h_2.\dots,h_k\}$ for k hypotheses. Each hopythosis is just a mapping function which takes $\mathcal{x}$ as input and map to either 1 or 0 and ERM algorithm is just to select the hypothesis which produces minimum training error, namely $\hat{h}$.
 
@@ -132,7 +130,7 @@ This is related to bias-variance tradeoff as well. Assum that we have a larger h
 
 $$m\geq\frac{1}{2\gamma^2}\log\frac{2k}{\delta} = O\bigg(\frac{1}{\gamma^2}\log\frac{k}{\delta}\bigg)$$
 
-## 4 The Case of Infinite $\mathcal{H}$
+# 4 The Case of Infinite $\mathcal{H}$
 
 In section 3, it shows that finite hypothesis class owns several convenient theorems we can directly bound the generalization error. However, many hypothesis class such as linear regression parameterized by real numbers contain an infinite number of functions since real numbers lie in continuous space. So can we also give the bound for such a case?
 

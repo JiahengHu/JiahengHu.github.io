@@ -13,9 +13,7 @@ sidebar:
   nav: "MachineLearning"
 ---
 
-# Bias-Varaince and Error Analysis
-
-## 1 The Bias-Varaince Tradeoff
+# 1 The Bias-Varaince Tradeoff
 
 Let's denote $\overset{\wedge}{f}$ be the model that is trained on some dataset and $y$ be the ground truth. Then, the mean squared error(MSE) is defined:
 
@@ -49,13 +47,13 @@ $$\begin{align}
 
 The fisrt term is data noise which we cannot do anything. A high bias term means the model does not learn efficiently and is underfitting. A high variance means that the model does not generalize well and is overfitting. 
 
-## 2 Error Analysis
+# 2 Error Analysis
 
 To analyze a model, we should first build a pipeline of the interests. Then, we start from plugging ground truth for each component and see how much accuracy that change makes on the model. An example can be seen below. 
 
 ![Error Analysis](/images/err_ana.png)
 
-## 3 Ablative Analysis
+# 3 Ablative Analysis
 
 Whereas error analysis tries to recognize the difference between current performance and perfect performance, Ablative Analysis tries to recognize that between baseline and current model. 
 
