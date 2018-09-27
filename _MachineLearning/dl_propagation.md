@@ -13,7 +13,7 @@ sidebar:
   nav: "MachineLearning"
 ---
 
-# Forward Propagation
+# 1 Forward Propagation
 
 This is more like a summary section. 
 
