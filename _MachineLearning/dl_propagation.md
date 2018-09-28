@@ -26,7 +26,9 @@ $$a^{[\ell]} = g^{[\ell]}(z^{[\ell]})$$
 where $g^{[\ell]}$ is the same for all the layers except for last layer. For the last layer, we can do:
 
 &nbsp;&nbsp;&nbsp;&nbsp;1 regression then $g(x) = x$
+
 &nbsp;&nbsp;&nbsp;&nbsp;2 binary then $g(x) = sigmoid(x)$
+
 &nbsp;&nbsp;&nbsp;&nbsp;3 multi-class then $g(x) = softmax(x)$
 
 Finally, we can have the output of the network $a^{[N]}$ and compute its loss. 
@@ -62,7 +64,7 @@ $$\delta^{[N]} = \triangledown_{z^{[N]}}\mathcal{L}(\hat{y},y)$$
 
 For softmax function, since it is not performed element-wise, so you can directly caculate it as a whole. For sigmoid, it is applied element-wise, so we need to:
 
-$$triangledown_{z^{[N]}}\mathcal{L}(\hat{y},y) = triangledown_{\hat{y}}\mathcal{L}(\hat{y},y)\circ (g^{[N]})^{\prime}(z^{[N]})$$
+$$\triangledown_{z^{[N]}}\mathcal{L}(\hat{y},y) = \triangledown_{\hat{y}}\mathcal{L}(\hat{y},y)\circ (g^{[N]})^{\prime}(z^{[N]})$$
 
 Note this is element-wise operation.
 
