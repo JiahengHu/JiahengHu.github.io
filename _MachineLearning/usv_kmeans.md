@@ -23,7 +23,7 @@ In unsupervised learning, we are not given any labels or ground truth for traini
 
 K-means clustering algorithm is a standard unsupervised learning algorithm. K-means usually will generate K clusters based on the distance of data point and cluster mean. On the other hand, knn clustering algorithm usually will return clusters with k samples for each cluster. Keep in mind that there is no label or ground truth required. 
 
-We are given a training set $\{x^{(1)},x^{(2)},\dots,\x^{(m)}\}$ where $x^{(i)}\in \mathbb{R}^n$. Then we can define K-means clustering algorithm as:
+We are given a training set $\{x^{(1)},x^{(2)},\dots,x^{(m)}\}$ where $x^{(i)}\in \mathbb{R}^n$. Then we can define K-means clustering algorithm as:
 
 1 Initialize **cluster centroids** $\mu_1,\mu_2,\dots,\mu_k\in mathbb{R}^n$ rrandomly
 
