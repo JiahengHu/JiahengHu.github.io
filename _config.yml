@@ -145,7 +145,8 @@ author:
 include:
   - .htaccess
   - _pages
-  - _MachineLearning
+  #- _MachineLearning
+  - _research
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
