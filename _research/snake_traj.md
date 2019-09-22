@@ -30,7 +30,7 @@ We train the agent through TD3 algorithm, which is a variation of DDPG. Through 
 staright line:
  ![staright line](/_research/images/straight_line.gif)
 
-curve line:&nbsp; 
+curve line:&nbsp; &nbsp; &nbsp; 
  ![curve line](/_research/images/curve_line.gif)
 
 
