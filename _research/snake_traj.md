@@ -9,7 +9,7 @@ share: false
 permalink: /research/snake_traj/
 ---
 
-This work is advised by Professor Tony Dear. This is an ongoing work and only part of results are shown here. 
+This work is advised by Professor Tony Dear. This is an ongoing work and only part of results are shown here. **This project is expected to be updated in the near future with regard to the gait generation part**.
 
 # Overview
 
@@ -27,11 +27,12 @@ I wrote the lagrangian equations for it, with three wheels providing three nonho
 
 We train the agent through TD3 algorithm, which is a variation of DDPG. Through reward shaping and cirriculum learning, we are able to get the snake to locomote based on the guidance of a 2D trajectory. Please see the gif below for an illustration, where the red dots are the trajectory feeded to the agent, and the blue dot is the head coordinate of the snake.
 
+staright line:
  ![staright line](/_research/images/straight_line.gif)
+
+curve line:
  ![curve line](/_research/images/curve_line.gif)
 
-
-**This project is expected to be updated in the near future with regard to the gait generation part**.
 
 
 |:-----:|:-------:|

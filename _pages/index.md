@@ -12,4 +12,4 @@ My research interests is in intelligent control of robotic systems. I am still b
 ### Additional information about myself
 
 * I'm an enthusiastic [contract bridge](https://en.wikipedia.org/wiki/Contract_bridge) player, and have been playing in various tournaments over the years, winning titles such as the 4th place in 2018 national college bridge tournament (Atlanta) and the first prize in 2016 national high school bridge tournament (Beijing). 
-* I love to play soccer with friends during weekeneds, and used to play in the highschool varsity. My favorite team is Real Madrid and my favorite player is Kaka.
+* I love to play soccer with friends during weekends, and used to play in my highschool's varsity. My favorite team is Real Madrid and my favorite player is Kaka.
