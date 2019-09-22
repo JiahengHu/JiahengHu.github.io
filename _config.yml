@@ -9,11 +9,11 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Wei's Homepage"
+title                    : "Jiaheng's Homepage"
 title_separator          : "-"
-name                     : "Wei Zhang"
-description              : "An amazing website."
-url                      : "https://wei2624.github.io"
+name                     : "Jiaheng Hu"
+description              : "An amazing website for sure."
+url                      : "https://JiahengHu.github.io"
 baseurl                  : #"https://wei2624.github.io"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
@@ -93,52 +93,52 @@ analytics:
 
 # Site Author
 author:
-  name             : "Wei Zhang"
-  avatar           : "/assets/images/wei_square_github.jpg"
-  bio              : "In me the tiger sniffs the rose."
+  name             : "JiahengHu"
+  avatar           : "/assets/images/JiahengHuCrop.png"
+  #bio              : "In me the tiger sniffs the rose."
   location         : "New York"
   email            : #"wz2363@columbia.edu"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: mailto:wz2363@columbia.edu
+      url: mailto:jh3916@columbia.edu
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      url: "https://wei2624.github.io"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/WeiKB24"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
+      url: "https://JiahengHu.github.io"
+    # - label: "Twitter"
+    #   icon: "fab fa-fw fa-twitter-square"
+    #   url: "https://twitter.com/WeiKB24"
+    # - label: "Facebook"
+    #   icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/Wei2624"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+      url: "https://github.com/JiahengHu"
+    # - label: "Instagram"
+    #   icon: "fab fa-fw fa-instagram"
+    #   # url: "https://instagram.com/"
 
 # Site Footer
-footer:
-  links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url:
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      # url:
-    - label: "GitLab"
-      icon: "fab fa-fw fa-gitlab"
-      # url:
-    - label: "Bitbucket"
-      icon: "fab fa-fw fa-bitbucket"
-      # url:
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url:
+#footer:
+  # links:
+  #   - label: "Twitter"
+  #     icon: "fab fa-fw fa-twitter-square"
+  #     # url:
+  #   - label: "Facebook"
+  #     icon: "fab fa-fw fa-facebook-square"
+  #     # url:
+  #   - label: "GitHub"
+  #     icon: "fab fa-fw fa-github"
+  #     # url:
+  #   - label: "GitLab"
+  #     icon: "fab fa-fw fa-gitlab"
+  #     # url:
+  #   - label: "Bitbucket"
+  #     icon: "fab fa-fw fa-bitbucket"
+  #     # url:
+  #   - label: "Instagram"
+  #     icon: "fab fa-fw fa-instagram"
+  #     # url:
 
 
 # Reading Files
