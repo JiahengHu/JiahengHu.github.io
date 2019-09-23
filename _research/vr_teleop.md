@@ -3,7 +3,7 @@ layout: single
 mathjax: true
 toc: true
 toc_sticky: true
-author_profile: false
+author_profile: true
 title: VR Teleoperation for Grasping and Data Collection
 share: false
 permalink: /research/vr_teleop/
