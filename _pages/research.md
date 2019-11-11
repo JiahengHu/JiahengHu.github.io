@@ -20,6 +20,10 @@ Benjamin Freed, Guillaume Sartoretti, **Jiaheng Hu**, and Howie Choset, “Commu
 **Jiaheng Hu**, and Tony Dear, “Trajectory Following and Gait Generation through Reinforcement Learning”, ongoing work, 2019
 [Details](https://JiahengHu.github.io/research/snake_traj/){: .btn .btn--success .btn--small}
 
+# Prior to 2019
+
+I didn't do any research prior to 2019.
+
 
 
 
