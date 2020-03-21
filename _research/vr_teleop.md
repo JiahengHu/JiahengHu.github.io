@@ -12,7 +12,7 @@ permalink: /research/vr_teleop/
 
 {% include video id="LKDF6XDl3kw" provider="youtube" %}
 
-##Explain##
+# Explain
 
 This video showcase the whole pipeline where the user controls a fetch robot in real world to:
 
