@@ -8,8 +8,8 @@ permalink: /research/
 ---
 
 
-**Jiaheng Hu**, David Watkins, and Peter Allen, "Teleoperated Robot Grasping through Environment Interaction in Virtual Reality Spaces", 2020
-[Details](https://JiahengHu.github.io/research/vr_teleop/){: .btn .btn--success .btn--small}
+**Jiaheng Hu**, David Watkins, and Peter Allen, "Teleoperated Robot Grasping in Virtual Reality Spaces", 2020
+[Video](https://JiahengHu.github.io/research/vr_teleop/){: .btn .btn--success .btn--small}
 
 Julian Whitman, **Jiaheng Hu**, Matthew Travers, and Howie Choset, "Modular robot locomotion control and design
 selection with deep reinforcement learning", Submitted to RSS 2020
