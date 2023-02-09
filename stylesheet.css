@@ -107,17 +107,23 @@ name {
 
 .one {
   width: 160px;
-  height: 160px;
+  height: 100px;
   position: relative;
 }
 
 .two {
   width: 160px;
-  height: 160px;
+  height: 100px;
   position: absolute;
   transition: opacity .2s ease-in-out;
   -moz-transition: opacity .2s ease-in-out;
   -webkit-transition: opacity .2s ease-in-out;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .fade {
