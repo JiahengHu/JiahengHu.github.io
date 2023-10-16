@@ -58,14 +58,26 @@
 
           <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
-          <tr>
+          <tr onmouseout="elden_stop()" onmouseover="elden_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
-                <img src='images/elden.png' style="width:160px;height:auto;">
+                <div class="two" id='elden_image'>
+                  <img src='images/kitchen_elden.gif' width="160"></div>
+                <img src='images/elden.png'>
               </div>
+              <script type="text/javascript">
+                function elden_start() {
+                  document.getElementById('elden_image').style.opacity = "1";
+                }
+
+                function elden_stop() {
+                  document.getElementById('elden_image').style.opacity = "0";
+                }
+                elden_stop()
+              </script>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="#">
+              <a href="https://arxiv.org/abs/2310.08702">
                 <papertitle>ELDEN: Exploration via Local Dependencies</papertitle>
               </a>
               <br>
@@ -76,7 +88,7 @@
               <br>
               <em>NeurIPS</em>, 2023
               <br>
-              <!-- <a href="https://ojs.aaai.org//index.php/AAAI/article/view/6205">paper</a> -->
+              <a href="https://arxiv.org/abs/2310.08702">paper</a>
               <p></p>
             </td>
           </tr>  
@@ -260,6 +272,8 @@
                     <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 
+
+
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
             <td style="padding:20px;width:100%;vertical-align:middle">
@@ -269,6 +283,42 @@
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           
+          <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+          <tr onmouseout="minibh_stop()" onmouseover="minibh_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='minibh_image'>
+                  <img src='images/mini_printer.gif' width="160", height="auto">
+                </div>
+                <img src='images/overall_minibh.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function minibh_start() {
+                  document.getElementById('minibh_image').style.opacity = "1";
+                }
+
+                function minibh_stop() {
+                  document.getElementById('minibh_image').style.opacity = "0";
+                }
+                minibh_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://arxiv.org/abs/2310.01824">
+                <papertitle>Mini-BEHAVIOR: A Procedurally Generated Benchmark for Long-horizon Decision-Making in Embodied AI</papertitle>
+              </a>
+              <br>
+              Emily Jin*, <strong>Jiaheng Hu</strong>*, Zhuoyi Huang, Ruohan Zhang, Jiajun Wu, Li Fei-Fei, Roberto Martín-Martín
+              <br>
+              <em>under review</em>, 2023
+              <br>
+              <a href="https://arxiv.org/abs/2310.01824">paper</a> / 
+              <a href="https://github.com/StanfordVL/mini_behavior">code</a> 
+              <p></p>
+            </td>
+          </tr>   
+
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
