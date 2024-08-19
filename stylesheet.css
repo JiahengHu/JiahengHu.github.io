@@ -105,6 +105,11 @@ name {
   font-size: 32px;
 }
 
+subname {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 26px;
+}
+
 .one {
   width: 160px;
   height: 100px;
